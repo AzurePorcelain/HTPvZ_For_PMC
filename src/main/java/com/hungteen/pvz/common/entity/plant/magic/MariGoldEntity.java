@@ -34,13 +34,19 @@ public class MariGoldEntity extends PlantProducerEntity {
 
 	@Override
 	public void genSuper() {
-		for (int i = 0; i < this.getSuperGenCnt(); ++i) {
-			this.genSomething();
-		}
-//		this.genSpecCoin(CoinType.GOLD);
-		if(this.getRandom().nextInt(10) == 0)
-		{
+		final int num = this.getRandom().nextInt(100);
+		if (num < 10) {
 			EntityUtil.createEntityAndSpawn(level, EntityRegister.JEWEL.get(), blockPosition());
+		}
+		else if (num < 10 + 30) {
+			for (int i = 0; i < 5; ++i) {
+				this.genSpecCoin(CoinType.GOLD);
+			}
+		}
+		else {
+			for (int i = 0; i < this.getSuperGenCnt(); ++i) {
+				this.genSomething();
+			}
 		}
 	}
 
@@ -58,11 +64,11 @@ public class MariGoldEntity extends PlantProducerEntity {
 	}
 	
 	public int getSilverChance() {
-		return 60;
+		return 40;
 	}
 
 	public int getGoldChance() {
-		return 10;
+		return 20;
 	}
 
 	public int getSuperGenCnt() {

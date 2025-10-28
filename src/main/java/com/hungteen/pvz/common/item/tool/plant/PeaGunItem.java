@@ -260,7 +260,7 @@ public class PeaGunItem extends Item {
 		final int pos = getFirstPos(stack);
 		final int lvl = PlayerUtil.getResource(player, Resources.TREE_LVL);
 		boolean flag = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) > 0;
-		if (player.hasEffect(EffectRegister.ENERGETIC_EFFECT.get()) || ! PlayerUtil.isPlayerSurvival(player) || (flag && player.getRandom().nextInt(100) < 75 + (lvl + 9) / 10)) {
+		if (player.hasEffect(EffectRegister.ENERGETIC_EFFECT.get()) || ! PlayerUtil.isPlayerSurvival(player) || (flag && player.getRandom().nextInt(100) < Math.min(95, 75 + (lvl + 4) / 5))) {
 		} else {
 			inv.removeItem(pos, 1);
 		}

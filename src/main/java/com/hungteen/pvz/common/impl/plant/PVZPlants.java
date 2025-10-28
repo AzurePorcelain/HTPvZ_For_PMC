@@ -542,7 +542,7 @@ public final class PVZPlants extends PlantType {
 	);
 	
 	public static final IPlantType GOLD_MAGNET = new PVZPlants("gold_magnet", new PlantFeatures()
-			.cost(200).requiredLevel(75)
+			.cost(200).requiredLevel(200)
 			.cd(CoolDowns.SLOW).rank(RankTypes.GOLD).essence(EssenceTypes.ASSIST)
 			.entityType(() -> EntityRegister.GOLD_MAGNET.get())
 			.summonCard(() -> ItemRegister.GOLD_MAGNET_CARD.get())

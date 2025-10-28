@@ -70,7 +70,7 @@ public class CoinEntity extends DropEntity {
 	}
 
 	public static enum CoinType {
-		COPPER(1), SILVER(10), GOLD(50);
+		COPPER(5), SILVER(10), GOLD(50);
 
 		public final int money;
 
