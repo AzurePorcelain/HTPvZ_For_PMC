@@ -65,6 +65,7 @@ public class ItemRegister {
   	public static final RegistryObject<Item> PEPPER = ITEMS.register("pepper", PVZMiscItem::new);
   	public static final RegistryObject<Item> FROZEN_MELON_SLICE = ITEMS.register("frozen_melon_slice", PVZMiscItem::new);
     public static final RegistryObject<Item> solar_badge = ITEMS.register("solar_badge", PVZMiscItem::new);
+    public static final RegistryObject<Item> soulgrind_crystal = ITEMS.register("soulgrind_crystal", PVZMiscItem::new);
   	
     /* essences */
     public static final RegistryObject<Item> ORIGIN_ESSENCE = ITEMS.register("origin_essence", () -> new EssenceItem(EssenceTypes.ORIGIN));
