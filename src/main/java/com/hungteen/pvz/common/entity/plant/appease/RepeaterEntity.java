@@ -2,8 +2,8 @@ package com.hungteen.pvz.common.entity.plant.appease;
 
 import com.hungteen.pvz.api.types.IPlantType;
 import com.hungteen.pvz.common.entity.bullet.itembullet.PeaEntity.Type;
+import com.hungteen.pvz.common.impl.SkillTypes;
 import com.hungteen.pvz.common.impl.plant.PVZPlants;
-
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
@@ -51,7 +51,7 @@ public class RepeaterEntity extends PeaShooterEntity{
 	
 	@Override
 	public void startShootAttack() {
-		this.setAttackTime(2);
+		this.setAttackTime(2 + (int)this.getSkillValue(SkillTypes.MULTIPLE_SHOOTING));
 	}
 	
 	@Override

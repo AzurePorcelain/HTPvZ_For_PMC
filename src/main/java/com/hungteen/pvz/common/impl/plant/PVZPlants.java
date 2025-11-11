@@ -62,7 +62,7 @@ public final class PVZPlants extends PlantType {
 			.summonCard(() -> ItemRegister.PEA_SHOOTER_CARD.get())
 			.enjoyCard(() -> ItemRegister.PEA_SHOOTER_ENJOY_CARD.get())
 			.plantModel(() -> PeaShooterModel::new).scale(1F)
-			.commonSkill(Arrays.asList(SkillTypes.PEA_DAMAGE))
+			.commonSkill(Arrays.asList(SkillTypes.PEA_DAMAGE, SkillTypes.MULTIPLE_SHOOTING))
 	);
 	
 	public static final IPlantType SUN_FLOWER = new PVZPlants("sun_flower", new PlantFeatures()
@@ -114,7 +114,7 @@ public final class PVZPlants extends PlantType {
 			.summonCard(() -> ItemRegister.SNOW_PEA_CARD.get())
 			.enjoyCard(() -> ItemRegister.SNOW_PEA_ENJOY_CARD.get())
 			.plantModel(() -> SnowPeaModel::new).scale(1F)
-			.commonSkill(Arrays.asList(SkillTypes.PEA_DAMAGE))
+			.commonSkill(Arrays.asList(SkillTypes.PEA_DAMAGE, SkillTypes.MULTIPLE_SHOOTING))
 	);
 	
 	public static final IPlantType CHOMPER = new PVZPlants("chomper", new PlantFeatures()
@@ -135,7 +135,7 @@ public final class PVZPlants extends PlantType {
 			.enjoyCard(() -> ItemRegister.REPEATER_ENJOY_CARD.get())
 			.plantModel(() -> RepeaterModel::new).scale(1F)
 			.upgradeTo(() -> PVZPlants.GATLING_PEA)
-			.commonSunSkill(Arrays.asList(SkillTypes.PEA_DAMAGE))
+			.commonSunSkill(Arrays.asList(SkillTypes.PEA_DAMAGE, SkillTypes.MULTIPLE_SHOOTING))
 	);
 	
 	/*

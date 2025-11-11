@@ -72,7 +72,7 @@ public class PeaShooterEntity extends PlantShooterEntity{
 
 	@Override
 	public void startShootAttack() {
-		this.setAttackTime(1);
+		this.setAttackTime(1 + (int)this.getSkillValue(SkillTypes.MULTIPLE_SHOOTING));
 	}
 
 	@Override

@@ -49,7 +49,7 @@ public class GatlingPeaEntity extends RepeaterEntity{
 	
 	@Override
 	public void startShootAttack() {
-		this.setAttackTime(4 + (int)this.getSkillValue(SkillTypes.MULTIPLE_SHOOTING));
+		this.setAttackTime(4 + 2 * (int)this.getSkillValue(SkillTypes.MULTIPLE_SHOOTING));
 	}
 	
 	@Override
