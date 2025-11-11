@@ -820,7 +820,7 @@
     "invasion.pvz.mission.finish6": "老虎机抽奖次数增加%d次",
     "invasion.pvz.mission.kill": "Kill %d enemies",
     "invasion.pvz.mission.collect_sun": "Collect %d sun",
-    "invasion.pvz.mission.instant_kill": "Kill %d enemies in 10s",
+    "invasion.pvz.mission.instant_kill": "Kill %d enemies in 20s",
 
     "help.pvz.patchouli":"Pls install Patchouli mod",
     "help.pvz.upgrade":"Advance Plants can only place on Corresponding plants !",

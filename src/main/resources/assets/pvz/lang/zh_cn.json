@@ -821,7 +821,7 @@
   "invasion.pvz.mission.finish6": "老虎机抽奖次数增加%d次",
   "invasion.pvz.mission.kill": "击杀%d个敌人",
   "invasion.pvz.mission.collect_sun": "收集%d阳光",
-  "invasion.pvz.mission.instant_kill": "10秒内击杀%d敌人",
+  "invasion.pvz.mission.instant_kill": "20秒内击杀%d敌人",
 
   "help.pvz.patchouli":"建议安装帕秋莉手册模组",
   "help.pvz.upgrade": "高级植物要种在对应植物上 ！",

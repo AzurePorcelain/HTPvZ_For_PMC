@@ -14,9 +14,9 @@ public class MissionManager {
 
     public static final int MAX_MISSION_STAGE = 5;
     public static final int KILL_IN_SECOND = 20;
-    private static final int[] KILL_MISSIONS = new int[]{50, 100, 200, 300, 500};
-    private static final int[] INSTANT_KILL_MISSIONS = new int[]{10, 15, 20, 25, 30};
-    private static final int[] COLLECT_SUN_MISSIONS = new int[]{5000, 10000, 15000, 20000, 25000};
+    private static final int[] KILL_MISSIONS = new int[]{100, 250, 500, 800, 1000};
+    private static final int[] INSTANT_KILL_MISSIONS = new int[]{15, 20, 30, 40, 50};
+    private static final int[] COLLECT_SUN_MISSIONS = new int[]{10000, 20000, 30000, 40000, 50000};
 
     /**
      * tick each second.

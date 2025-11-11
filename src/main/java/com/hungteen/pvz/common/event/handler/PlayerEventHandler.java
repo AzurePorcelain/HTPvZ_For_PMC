@@ -20,7 +20,6 @@ import com.hungteen.pvz.common.potion.EffectRegister;
 import com.hungteen.pvz.common.world.invasion.InvasionManager;
 import com.hungteen.pvz.common.world.invasion.MissionManager;
 import com.hungteen.pvz.compat.patchouli.PVZPatchouliHandler;
-import com.hungteen.pvz.utils.ConfigUtil;
 import com.hungteen.pvz.utils.EntityUtil;
 import com.hungteen.pvz.utils.PlayerUtil;
 import com.hungteen.pvz.utils.StringUtil;
@@ -35,8 +34,6 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
@@ -103,7 +100,7 @@ public class PlayerEventHandler {
                 PlayerUtil.addResource(player, Resources.TREE_XP, ((AbstractPAZEntity) living).getPAZType().getXpPoint());
             }
         }
-        if (PlayerUtil.getInvasion(player).isInvasionEntity(living.getType()) && EntityUtil.isEnemy(player, living)) {
+        if (EntityUtil.isEnemy(player, living)) {
             if (MissionManager.getPlayerMission(player) == MissionManager.MissionType.KILL || MissionManager.getPlayerMission(player) == MissionManager.MissionType.INSTANT_KILL) {
                 PlayerUtil.addResource(player, Resources.MISSION_VALUE, 1);
             }

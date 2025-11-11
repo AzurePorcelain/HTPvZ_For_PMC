@@ -34,7 +34,7 @@ public class PVZMod {
     // Mod ID.
 	public static final String MOD_ID = "pvz";
 	// Mod Version.
-	public static final String MOD_VERSION = "0.9.1_PMC";
+	public static final String MOD_VERSION = "0.9.2_PMC";
 	// Proxy of Server and Client.
 	public static CommonProxy PROXY = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 	
