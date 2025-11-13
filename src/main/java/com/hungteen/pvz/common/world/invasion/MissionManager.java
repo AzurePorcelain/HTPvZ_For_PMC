@@ -54,19 +54,19 @@ public class MissionManager {
 
     public static void rewardPlayer(PlayerEntity player, MissionType type, int stage){
         if(stage == 0){
-            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish1", stage));
+            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish1"));
             rewardMoney(player, 500);
         } else if(stage == 1){
-            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish2", stage));
+            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish2"));
             rewardLottery(player, 5);
         }else if(stage == 2){
-            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish3", stage));
+            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish3"));
             rewardMoney(player, 1000);
         }else if(stage == 3){
-            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish4", stage));
+            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish4"));
             rewardLottery(player, 10);
         }else{
-            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish5", stage));
+            PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish5"));
             rewardJewel(player, 2);
         }
     }

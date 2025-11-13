@@ -314,7 +314,7 @@ public class PlayerDataManager {
 		} else if(res == Resources.LOTTERY_CHANCE) {
 			now = MathHelper.clamp(now + num, res.min, res.max);
 			resources.put(res, now);
-			if (num > 0) PlayerUtil.sendMsgTo(player, new TranslationTextComponent("invasion.pvz.mission.finish6", num));
+			if (num > 0) PlayerUtil.sendMsgTo(player, new TranslationTextComponent("help.pvz.add_lottery_chance", num));
 		} else{
 			now = MathHelper.clamp(now + num, res.min, res.max);
 			resources.put(res, now);
