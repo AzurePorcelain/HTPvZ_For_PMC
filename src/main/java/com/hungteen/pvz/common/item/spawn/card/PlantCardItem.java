@@ -713,6 +713,14 @@ public class PlantCardItem extends SummonCardItem {
 		{
 			return true;
 		}
+		if (this.plantType.toString().equals("coffee_bean"))
+		{
+			return true;
+		}
+		if (this.plantType.toString().equals("gold_leaf"))
+		{
+			return true;
+		}
 
 		return false;
 	}

@@ -28,8 +28,8 @@ public class ZombieUtil {
 	public static final float WALK_LITTLE_FAST = 0.225F;
 	public static final float WALK_FAST = 0.25F; 
 	public static final float WALK_VERY_FAST = 0.275F; 
-	public static final float WALK_HUGE_FAST = 0.6F;
-	public static final float WALK_SUPER_FAST = 1.8F;
+	public static final float WALK_HUGE_FAST = 0.4F;
+	public static final float WALK_SUPER_FAST = 0.6F;
 	public static final float WATER_FAST = 0.8F;
 	public static final float FLY_FAST = 0.5F;
 

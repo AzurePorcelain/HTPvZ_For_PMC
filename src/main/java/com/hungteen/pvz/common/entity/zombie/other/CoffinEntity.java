@@ -1,20 +1,16 @@
 package com.hungteen.pvz.common.entity.zombie.other;
 
 import com.hungteen.pvz.common.capability.CapabilityHandler;
-import com.hungteen.pvz.common.capability.challenge.RaiderDataCapability;
+import com.hungteen.pvz.common.entity.EntityRegister;
 import com.hungteen.pvz.common.entity.misc.ZombieHandEntity;
 import com.hungteen.pvz.common.entity.zombie.base.AbstractBossZombieEntity;
-import com.hungteen.pvz.common.impl.zombie.ZombieType;
 import com.hungteen.pvz.common.impl.zombie.CustomZombies;
-import com.hungteen.pvz.common.misc.sound.SoundRegister;
+import com.hungteen.pvz.common.impl.zombie.ZombieType;
 import com.hungteen.pvz.common.misc.PVZLoot;
-import com.hungteen.pvz.common.entity.EntityRegister;
-import com.hungteen.pvz.common.world.challenge.Challenge;
-import com.hungteen.pvz.common.world.challenge.ChallengeManager;
+import com.hungteen.pvz.common.misc.sound.SoundRegister;
 import com.hungteen.pvz.utils.EntityUtil;
 import com.hungteen.pvz.utils.ZombieUtil;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -23,7 +19,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 
 public class CoffinEntity extends AbstractBossZombieEntity {
 
@@ -104,7 +99,7 @@ public class CoffinEntity extends AbstractBossZombieEntity {
 	
 	@Override
 	public float getLife() {
-		return 1000;
+		return 500;
 	}
 
 	@Override
