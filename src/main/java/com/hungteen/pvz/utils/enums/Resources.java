@@ -2,7 +2,6 @@ package com.hungteen.pvz.utils.enums;
 
 import com.hungteen.pvz.common.capability.player.PlayerDataManager;
 import com.hungteen.pvz.utils.ConfigUtil;
-
 import net.minecraft.util.text.TranslationTextComponent;
 
 public enum Resources {
@@ -14,7 +13,7 @@ public enum Resources {
 	/* money, common currency */
 	MONEY(0, 1000000),
 	/* jewel, special currency */
-	GEM_NUM(0, 1000000),
+	GEM_NUM(0, 1000),
 	/* sun amount, maximum is limited by tree maxLevel*/
 	SUN_NUM(0, 0),
 	/* max plant food amount */
@@ -26,7 +25,7 @@ public enum Resources {
 	/* kill zombie count */
 //	KILL_COUNT(0, 9999999),
 	/* the chance to use slot machine */
-	LOTTERY_CHANCE(0, 9999999),
+	LOTTERY_CHANCE(0, 9999),
 	/* the group of player */
 	GROUP_TYPE(- 2, 2),
 	/* card slot */

@@ -629,7 +629,7 @@ public class PlantCardItem extends SummonCardItem {
 			if (EntityUtil.getFriendlyLivings(player, EntityUtil.getEntityAABB(player, range, 255))
 					.stream().filter(entity -> {
 						return entity instanceof PlantProducerEntity;
-					}).count() - DenselyPlantEnchantment.getExtraPlantNum(stack) + 1 > 48)
+					}).count() - DenselyPlantEnchantment.getExtraPlantNum(stack)/5 + 1 > 48)
 			{
 				return 100001;
 			}
@@ -641,7 +641,7 @@ public class PlantCardItem extends SummonCardItem {
 			if (EntityUtil.getFriendlyLivings(player, EntityUtil.getEntityAABB(player, range, 255))
 					.stream().filter(entity -> {
 						return entity instanceof PlantBomberEntity;
-					}).count() - DenselyPlantEnchantment.getExtraPlantNum(stack)/5 + 1 > 3)
+					}).count() - DenselyPlantEnchantment.getExtraPlantNum(stack)/10 + 1 > 3)
 			{
 				return 100002;
 			}
