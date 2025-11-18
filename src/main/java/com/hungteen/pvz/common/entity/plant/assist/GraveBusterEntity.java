@@ -179,7 +179,7 @@ public class GraveBusterEntity extends PVZPlantEntity{
 			if(tick >= this.buster.getEatTombCD()) {
 				this.buster.setAttackTime(0);
 				++ this.buster.killCount;
-				this.target.hurt(PVZEntityDamageSource.eat(this.buster), EntityUtil.getMaxHealthDamage(this.buster.getTarget(), 1.5F));
+				this.target.hurt(PVZEntityDamageSource.eat(this.buster), EntityUtil.getMaxHealthDamage(this.buster.getTarget(), 6F));
 			    if(this.buster.killCount >= this.buster.getMaxKillCnt()) {
 					this.buster.remove();
 				}

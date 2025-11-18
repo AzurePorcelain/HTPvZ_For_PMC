@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/HungTeen/pvzmod/issues"
 
 [[mods]]
 modId="pvz"
-version="0.9.2_PMC"
+version="0.9.3_PMC"
 displayName="Plants vs Zombies"
 authors="_HungTeen_, Wolf__Crystal, Grass_Carp, PMC_Team"
 logoFile="logo.png" 
