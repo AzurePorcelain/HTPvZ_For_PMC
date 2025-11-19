@@ -69,7 +69,7 @@ public abstract class EdgarRobotEntity extends AbstractBossZombieEntity {
 
     public void removeBallField() {
         BallResistanceFieldTime = 0;
-        this.setHealth(this.getHealth()-500f);//被移除护盾受到500点真实伤害
+        this.setHealth(Math.max(this.getHealth()-300f, 0.1f));//被移除护盾受到300点真实伤害
         setRuneField(100);//冰火球护盾破裂后5秒内有符文护盾
     }
 
@@ -368,7 +368,7 @@ public abstract class EdgarRobotEntity extends AbstractBossZombieEntity {
     public abstract int getBossStage();
 
     public float getElementBallSpeed(){
-        return 0.18F;
+        return 0.06F;
     }
 
     public int getStealCount(){

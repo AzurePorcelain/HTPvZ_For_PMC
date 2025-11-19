@@ -30,7 +30,7 @@ public class Edgar090517Entity extends Edgar090505Entity {
     }
 
     @Override
-    public int getBossStage() {
+    public int getBossStage() { // 17拥有5阶段，4次切换无敌
         final float percent = this.bossInfo.getPercent();
         return percent > 4F / 5 ? 1 :
                 percent > 3F / 5 ? 2 :
@@ -59,7 +59,7 @@ public class Edgar090517Entity extends Edgar090505Entity {
 
     @Override
     public float getElementBallSpeed() {
-        return this.getBossStage() < 3 ? 0.18F : this.getBossStage() < 5 ? 0.21F : 0.23F;
+        return this.getBossStage() < 3 ? 0.06F : this.getBossStage() < 5 ? 0.12F : 0.18F;
     }
 
     @Override
@@ -74,12 +74,12 @@ public class Edgar090517Entity extends Edgar090505Entity {
 
     @Override
     public float getLife() {
-        return 10000;
+        return 3000;
     }
 
     @Override
     public float getInnerLife() {
-        return 4000;
+        return 800;
     }
 
     @Override

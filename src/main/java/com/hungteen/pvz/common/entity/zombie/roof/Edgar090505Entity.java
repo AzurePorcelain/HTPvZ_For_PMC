@@ -143,7 +143,7 @@ public class Edgar090505Entity extends EdgarRobotEntity {
     }
 
     @Override
-    public int getBossStage() {
+    public int getBossStage() { // 05拥有3阶段，2次切换无敌
         final float percent = this.bossInfo.getPercent();
         return percent > 3F / 4 ? 1 :
                 percent > 2F / 4 ? 2 : 3;
@@ -178,12 +178,12 @@ public class Edgar090505Entity extends EdgarRobotEntity {
 
     @Override
     public float getLife() {
-        return 6000;
+        return 1500;
     }
 
     @Override
     public float getInnerLife() {
-        return 2000;
+        return 500;
     }
 
     @Override
