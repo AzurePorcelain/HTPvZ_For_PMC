@@ -9,19 +9,19 @@
 	"progress_bar_background":"DDDDDD",
 	"creative_tab":"pvz_useful",
 	"macros": {
-	    "$(red)":"$(#ff0000)",
-	    "$(bred)":"$(l)$(#ff0000)",
-	    "$(green)":"$(#00ff00)",
-	    "$(bgreen)":"$(l)$(#00ff00)",
-	    "$(blue)":"$(#0000ff)",
-	    "$(bblue)":"$(l)$(#0000ff)",
-	    "$(yellow)":"$(#ffeb06)",
-	    "$(byellow)":"$(l)$(#ffeb06)",
-	    "$(purple)":"$(#ff00ff)",
-	    "$(bpurple)":"$(l)$(#ff00ff)",
-	    "$(aqua)":"$(#00ffff)",
-	    "$(baqua)":"$(l)$(#00ffff)",
-	    "$(orange)":"$(#ff851f)",
-	    "$(borange)":"$(l)$(#ff851f)"
+		"$(red)":"$(#cc5555)",
+		"$(bred)":"$(l)$(#dd6666)",
+		"$(green)":"$(#55aa55)",
+		"$(bgreen)":"$(l)$(#66bb66)",
+		"$(blue)":"$(#5555cc)",
+		"$(bblue)":"$(l)$(#6666dd)",
+		"$(yellow)":"$(#ccaa33)",
+		"$(byellow)":"$(l)$(#ddbb44)",
+		"$(purple)":"$(#aa55aa)",
+		"$(bpurple)":"$(l)$(#bb66bb)",
+		"$(aqua)":"$(#33aaaa)",
+		"$(baqua)":"$(l)$(#44bbbb)",
+		"$(orange)":"$(#cc7733)",
+		"$(borange)":"$(l)$(#dd8844)"
 	}
 }

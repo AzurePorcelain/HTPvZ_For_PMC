@@ -7,31 +7,31 @@
             "type": "spotlight",
             "item": "pvz:sun_storage_sapling",
             "title": "储光树苗",
-            "text": "$(byellow)储光树苗$()是一种能为玩家$(bgreen)存储阳光$()的特殊树苗。玩家只需$(l)右键$()啃食它就能$(bred)吸收转化它存储的阳光$()，非一次性储光树苗吃完不会$(l)消失$()。树苗需放在阳光转化器中充能。"
+            "text": "$(byellow)储光树苗$()是一种能够为玩家$(bgreen)存储阳光$()的特殊树苗。$(br2)$(l)使用方法：$()$(l)右键啃食$()即可$(bred)吸收其中存储的阳光$()。$(br2)$(l)特性：$()除一次性树苗外，食用后树苗$(baqua)不会消失$()，可重复使用。$(br2)树苗需要放置在$(byellow)阳光转化器$()中进行充能。"
         },
         {
             "type": "crafting",
             "recipe": "pvz:food/small_sun_storage_sapling",
-            "title": "低级储光树苗",
-            "text": "基本的储光树苗，最大容量是2000。"
+            "title": "小型储光树苗",
+            "text": "基础的储光树苗，$(l)最大容量：$()$(byellow)2,000$()阳光"
         },
         {
             "type": "crafting",
             "recipe": "pvz:food/sun_storage_sapling",
             "title": "储光树苗",
-            "text": "升级版的储光树苗，最大容量是7500。"
+            "text": "标准版的储光树苗，$(l)最大容量：$()$(byellow)7,500$()阳光"
         },
         {
             "type": "crafting",
             "recipe": "pvz:food/large_sun_storage_sapling",
-            "title": "储光树苗",
-            "text": "终极版的储光树苗，最大容量是25000。"
+            "title": "大型储光树苗",
+            "text": "高级版的储光树苗，$(l)最大容量：$()$(byellow)25,000$()阳光"
         },
         {
             "type": "spotlight",
             "item": "pvz:sun_converter",
             "title": "阳光转化器",
-            "text": "$(byellow)阳光转化器$()能帮助储光树苗吸收阳光。 只需把$(l)储光树苗放在阳光转化器的九个槽位中$()，转化器就会$(bred)自动吸收周围的阳光$()并传递给储光树苗。"
+            "text": "$(byellow)阳光转化器$()是储光树苗的专用充能设备。$(br2)$(l)使用方法：$()将$(byellow)储光树苗$()放置在转化器的$(baqua)9个槽位$()中。$(br2)$(l)功能：$()转化器会自动$(bred)吸收周围环境中的阳光$()，并$(baqua)传递$()给槽位内的储光树苗进行存储。"
         }
     ],
     "advancement": "pvz:adventure/essence",

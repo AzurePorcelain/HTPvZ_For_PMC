@@ -5,41 +5,40 @@
     "pages": [
         {
             "type": "text",
-            "text": "召唤卡的合成一般需要$(#ff0000)合成原料、卡的模板、对应的特殊精华$()。合成原料可以是$(l)种子、召唤卡$()等；卡的模板就是召唤卡对应$(l)品质$()的模板，特殊精华一般是该生物的属性对应的精华。"
+            "text": "合成召唤卡需要准备以下三种核心材料：$(br2)$(bred)1. 合成原料$()$(br)一般是植物种子或异变前的植物本身$(br2)$(bred)2. 卡牌模板$()$(br)对应召唤卡的$(l)品质等级$()$(br2)$(bred)3. 特殊精华$()$(br)与该植物的$(l)异变方向$()相对应的精华"
         },
         {
             "type": "text",
-            "text": "卡模板的合成需要$(l)原始精华和特定材料$()。特殊精华的获取前面介绍过。合成原料比较复杂，不同的召唤卡需要不同的原料。好在一个生物只对应一个精华，$(l)如果你获得了一个精华，你会解锁合成需要该精华的所有召唤卡的配方$()。根据配方的提示，再去寻找原料即可。"  
+            "text": "$(l)卡牌模板$()需要通过$(l)原始精华$()与特定材料合成。$(br2)$(l)特殊精华$()的获取方法已在前面章节介绍。$(br2)最复杂的是$(bred)合成原料$()，不同召唤卡的需求各不相同。$(br2)但有个好消息：$(baqua)每获得一种特殊精华，就会自动解锁所有需要该精华的召唤卡配方$()。$(br2)您只需根据配方提示，按图索骥寻找对应的原料即可。"
         },
         {
             "type": "crafting",
-            "recipe": "pvz:card/template/gray_card",
-            "recipe2": "pvz:card/template/white_card",
-            "title": "模板配方"
+            "recipe": "pvz:card/template/white_card",
+            "title": "模板配方 - 基础品质"
         },
         {
             "type": "crafting",
             "recipe": "pvz:card/template/green_card",
             "recipe2": "pvz:card/template/blue_card",
-            "title": "模板配方"
+            "title": "模板配方 - 进阶品质"
         },
         {
             "type": "crafting",
             "recipe": "pvz:card/template/purple_card",
             "recipe2": "pvz:card/template/gold_card",
-            "title": "模板配方"
+            "title": "模板配方 - 高级品质"
         },
         {
             "type": "crafting",
             "recipe": "pvz:card/template/red_card",
             "recipe2": "pvz:card/template/black_card",
-            "title": "模板配方"
+            "title": "模板配方 - 顶级品质"
         },
         {
             "type": "crafting",
             "recipe": "pvz:card/pea_shooter_card",
-            "title": "豌豆射手卡",
-            "text": "以$(#ff0000)豌豆射手卡$()为例，豌豆射手是$(l)灰色品质、喷射属性$()的生物。所以其合成需要$(l)豌豆、灰卡模板和喷射精华$()。"
+            "title": "实例解析：豌豆射手卡",
+            "text": "以$(baqua)豌豆射手卡$()为例分析合成逻辑：$(br2)$(l)品质分析：$()$(bred)白色品质$()$(br)$(l)属性分析：$()$(baqua)喷射属性$()$(br2)$(l)合成需求：$()$(br)· $(bgreen)豌豆$()（合成原料）$(br)· $(#888888)白卡模板$()（品质模板）$(br)· $(#87CEEB)喷射精华$()（属性精华）"
         }
     ],
     "advancement": "pvz:adventure/origin",
