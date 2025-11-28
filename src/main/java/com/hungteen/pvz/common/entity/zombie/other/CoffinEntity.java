@@ -64,7 +64,7 @@ public class CoffinEntity extends AbstractBossZombieEntity {
 				if(this.isGuardGone(i)) {
 					continue;
 				}
-				if(this.bossInfo.getPercent() < (5 - i) * 1.0f / 6f) {
+				if(this.bossInfo.getPercent() < (4 - i) * 1.0f / 5f) {
 					this.setGuardStateById(i, 1);
 					MournerZombieEntity zombie = EntityRegister.MOURNER_ZOMBIE.get().create(level);
 					zombie.setRightShake((i & 1) == 0);

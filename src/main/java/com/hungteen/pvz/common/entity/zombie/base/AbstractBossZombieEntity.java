@@ -83,8 +83,8 @@ public abstract class AbstractBossZombieEntity extends PVZZombieEntity {
 	
 	public void checkAndHeal(float percent) {
 		if(this.getTarget() == null) {
-			if(++ this.noTargetTick >= 40) {
-				this.heal(1);
+			if(++ this.noTargetTick >= 20) {
+				this.heal(5f);
 			}
 		}
 	}

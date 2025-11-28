@@ -49,7 +49,7 @@ public class Edgar090505Entity extends EdgarRobotEntity {
         if (LastBossStage < getBossStage())
         {
             LastBossStage = getBossStage();
-            setResistanceField(300);//切换阶段无敌15s
+            setResistanceField(100);//切换阶段无敌5s
             setDefensiveField(this.getInnerLife());
         }
 
@@ -151,7 +151,7 @@ public class Edgar090505Entity extends EdgarRobotEntity {
 
     @Override
     protected void spawnSpecialDrops() {
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 3; ++i) {
             JewelEntity jewel = EntityRegister.JEWEL.get().create(level);
             EntityUtil.onEntityRandomPosSpawn(level, jewel, blockPosition().above(5), 4);
         }
