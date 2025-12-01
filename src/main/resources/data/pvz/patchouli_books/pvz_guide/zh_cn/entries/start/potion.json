@@ -7,7 +7,7 @@
             "type": "spotlight",
             "item": "minecraft:potion{'Potion':'pvz:excite_potion_2'}",
             "title": "兴奋药水",
-            "text": "饮用兴奋药水可让玩家进入兴奋状态，从而$(baqua)大幅缩短植物卡的冷却时间$()。$(br2)$(l)效果等级：$()$(br)· $(baqua)I级$()：$(bred)40%$()冷却减免$(br)· $(baqua)II级$()：$(bred)60%$()冷却减免$(br)· $(baqua)III级$()：$(bred)80%$()冷却减免$(br2)$(l)获取途径：$()$(br)· 小概率在$(byellow)阳光戴夫$()的交易中出现$(br)· $(bgreen)旅人$()处可能有大量存货"
+            "text": "饮用后玩家进入兴奋状态，$(baqua)大幅缩短植物卡冷却$()。$(br2)$(l)效果等级：$()$(br)· $(baqua)I级$()：$(bred)40%$()冷却减免$(br)· $(baqua)II级$()：$(bred)60%$()冷却减免$(br)· $(baqua)III级$()：$(bred)80%$()冷却减免$(br2)$(l)获取途径：$()$(br)· 小概率在$(byellow)阳光戴夫$()处出现$(br)· $(bgreen)某个异乡旅者$()可能有大量存货"
         }
     ],
     "advancement": "pvz:adventure/root",
