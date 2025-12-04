@@ -53,57 +53,50 @@ public class Edgar090505Entity extends EdgarRobotEntity {
             setDefensiveField(this.getInnerLife());
         }
 
+        // 先计算目标状态（按优先级顺序），确保状态切换的连续性
+        FieldStates targetState;
+        boolean shouldShowBossInnerInfo = false;
+        
         if (ResistanceFieldTime > 0)
         {
-            if (this.getFieldState() != FieldStates.Resistance)
-            {
-                setHasFieldChanged(true);
-                setFieldState(FieldStates.Resistance);
-            }
+            targetState = FieldStates.Resistance;
             ResistanceFieldTime--;
-            bossInnerInfo.setVisible(false);
+            shouldShowBossInnerInfo = false;
         }
         else if (BallResistanceFieldTime > 0)
         {
-            if (this.getFieldState() != FieldStates.BallResistance)
-            {
-                setHasFieldChanged(true);
-                setFieldState(FieldStates.BallResistance);
-            }
+            targetState = FieldStates.BallResistance;
             BallResistanceFieldTime--;
-            bossInnerInfo.setVisible(false);
+            shouldShowBossInnerInfo = false;
         }
         else if (RuneFieldTime > 0)
         {
-            if (this.getFieldState() != FieldStates.Rune)
-            {
-                setHasFieldChanged(true);
-                setFieldState(FieldStates.Rune);
-            }
+            // 确保连续性：当 RuneFieldTime > 0 时，目标状态始终为 Rune
+            // 这样可以避免切换形态时状态短暂变化导致的闪烁
+            targetState = FieldStates.Rune;
             RuneFieldTime--;
-            if (this.getInnerDefenceLife() > 0)
-                bossInnerInfo.setVisible(true);
-            else
-                bossInnerInfo.setVisible(false);
+            shouldShowBossInnerInfo = this.getInnerDefenceLife() > 0;
         }
         else if (this.getInnerDefenceLife() > 0)
         {
-            if (this.getFieldState() != FieldStates.Defensive)
-            {
-                setHasFieldChanged(true);
-                setFieldState(FieldStates.Defensive);
-            }
-            bossInnerInfo.setVisible(true);
+            targetState = FieldStates.Defensive;
+            shouldShowBossInnerInfo = true;
         }
         else
         {
-            if (this.getFieldState() != FieldStates.None)
-            {
-                setHasFieldChanged(true);
-                setFieldState(FieldStates.None);
-            }
-            bossInnerInfo.setVisible(false);
+            targetState = FieldStates.None;
+            shouldShowBossInnerInfo = false;
         }
+
+        FieldStates currentState = this.getFieldState();
+        if (currentState != targetState)
+        {
+            setHasFieldChanged(true);
+            setFieldState(targetState);
+        }
+        
+        // 更新Boss血条显示
+        bossInnerInfo.setVisible(shouldShowBossInnerInfo);
     }
 
     @SuppressWarnings("deprecation")

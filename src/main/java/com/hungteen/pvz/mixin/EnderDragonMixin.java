@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(EnderDragonEntity.class)
+@Mixin(value = EnderDragonEntity.class,remap = false)
 public abstract class EnderDragonMixin extends MobEntity {
     protected EnderDragonMixin(EntityType<? extends MobEntity> p_i48576_1_, World p_i48576_2_) {
         super(p_i48576_1_, p_i48576_2_);
