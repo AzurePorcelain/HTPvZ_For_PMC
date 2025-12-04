@@ -1,7 +1,7 @@
 {
-	"name": "Boss",
-	"description": "Boss的挑战。",
+	"name": "BOSS图鉴",
+	"description": "记录着所有强大敌人的详细情报$(br)$(red)知己知彼，百战不殆！",
 	"icon": "pvz:edgar_doll",
-	"sortnum":1,
+	"sortnum": 1,
 	"parent": "pvz:start"
 }
