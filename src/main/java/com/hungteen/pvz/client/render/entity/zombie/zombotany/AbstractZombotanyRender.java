@@ -1,7 +1,8 @@
 package com.hungteen.pvz.client.render.entity.zombie.zombotany;
 
 import com.hungteen.pvz.client.render.entity.zombie.PVZZombieRender;
-import com.hungteen.pvz.client.render.layer.DuckyTubeLayer;
+import com.hungteen.pvz.client.render.layer.ZombieBeardLayer;
+import com.hungteen.pvz.client.render.layer.item.DuckyTubeLayer;
 import com.hungteen.pvz.common.entity.zombie.zombotany.AbstractZombotanyEntity;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -17,10 +18,11 @@ public abstract class AbstractZombotanyRender<T extends AbstractZombotanyEntity>
 			float shadowSizeIn) {
 		super(rendererManager, entityModelIn, shadowSizeIn);
 	}
-	
+
 	@Override
 	protected void addZombieLayers() {
 		super.addZombieLayers();
+		this.addLayer(new ZombieBeardLayer<>(this));
 		this.addLayer(new DuckyTubeLayer<T>(this));
 	}
 	

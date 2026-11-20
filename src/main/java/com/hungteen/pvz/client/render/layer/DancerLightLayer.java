@@ -35,7 +35,7 @@ public class DancerLightLayer<T extends Entity> extends LayerRenderer<T, EntityM
            ivertexbuilder2.vertex(matrix4f, 0.0f, - 10.0f, 0.0f).color(128, 0, 128, 255).endVertex();
            ivertexbuilder2.vertex(matrix4f, - 0.866f * f3, 2, (- 0.5F * f3)).color(128, 0, 128, 20).endVertex();
            ivertexbuilder2.vertex(matrix4f, 0.866f * f3, 2, (- 0.5F * f3)).color(128, 0, 128, 20).endVertex();
-           ivertexbuilder2.vertex(matrix4f, 0.0f, 2, (1.0F * f3)).color(128, 0, 128, 20).endVertex();
+           ivertexbuilder2.vertex(matrix4f, 0.0f, 2, (f3)).color(128, 0, 128, 20).endVertex();
            ivertexbuilder2.vertex(matrix4f, - 0.866f * f3, 2, (- 0.5F * f3)).color(128 , 0, 128, 20).endVertex();
         }
         matrixStackIn.popPose();

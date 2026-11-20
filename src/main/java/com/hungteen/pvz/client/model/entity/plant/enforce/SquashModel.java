@@ -16,20 +16,20 @@ public class SquashModel extends PVZPlantModel<SquashEntity> {
 	private final ModelRenderer bone;
 
 	public SquashModel() {
-		texWidth = 256;
-		texHeight = 256;
+		texWidth = 64;
+		texHeight = 64;
 
 		body = new ModelRenderer(this);
-		body.setPos(0.0F, 24.0F, 0.0F);
-		body.texOffs(125, 202).addBox(-16.0F, -16.0F, -16.0F, 32.0F, 16.0F, 32.0F, 0.0F, false);
-		body.texOffs(138, 153).addBox(-14.0F, -32.0F, -14.0F, 28.0F, 16.0F, 28.0F, 0.0F, false);
-		body.texOffs(40, 148).addBox(-11.0F, -44.0F, -11.0F, 22.0F, 12.0F, 22.0F, 0.0F, false);
+		body.setPos(0.0F, 9.0F, 0.0F);
+		body.texOffs(0, 0).addBox(-8.0F, 7.0F, -8.0F, 16.0F, 8.0F, 16.0F, 0.0F, false);
+		body.texOffs(0, 24).addBox(-7.0F, -1.0F, -7.0F, 14.0F, 8.0F, 14.0F, 0.0F, false);
+		body.texOffs(0, 46).addBox(-5.5F, -7.0F, -5.5F, 11.0F, 6.0F, 11.0F, 0.0F, false);
 
 		bone = new ModelRenderer(this);
-		bone.setPos(0.0F, -50.0F, 0.0F);
+		bone.setPos(0.0F, -10.0F, 0.0F);
 		body.addChild(bone);
 		setRotationAngle(bone, 0.0F, 0.0F, 0.5236F);
-		bone.texOffs(235, 130).addBox(1.0F, -1.8038F, -2.0F, 4.0F, 9.0F, 4.0F, 0.0F, false);
+		bone.texOffs(44, 46).addBox(0.5F, -0.4019F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
 	}
 
 	@Override

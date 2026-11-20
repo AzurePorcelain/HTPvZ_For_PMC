@@ -1,7 +1,7 @@
 package com.hungteen.pvz.client.render.entity.plant;
 
-import com.hungteen.pvz.client.render.layer.PlantLadderLayer;
-import com.hungteen.pvz.client.render.layer.PumpkinArmorLayer;
+import com.hungteen.pvz.client.render.layer.item.PlantLadderLayer;
+import com.hungteen.pvz.client.render.layer.component.PumpkinArmorLayer;
 import com.hungteen.pvz.client.render.layer.fullskin.CharmLayer;
 import com.hungteen.pvz.client.render.layer.fullskin.EnergyLayer;
 import com.hungteen.pvz.client.render.layer.fullskin.HealLightLayer;

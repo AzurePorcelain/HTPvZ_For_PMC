@@ -6,111 +6,137 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-// Made with Blockbench 3.6.6
-// Exported for Minecraft version 1.15
-// Paste this class into your mod and generate all required imports
+// Made with Blockbench 5.2.2
+// Exported for Minecraft version 1.15 - 1.16 with Mojang mappings
 
 
 public class DolphinRiderModel extends EntityModel<DolphinRiderEntity> {
 	private final ModelRenderer total;
 	private final ModelRenderer zombie;
-	private final ModelRenderer left_leg;
-	private final ModelRenderer right_leg;
-	private final ModelRenderer body;
-	private final ModelRenderer left_hand;
-	private final ModelRenderer right_hand;
+	private final ModelRenderer up;
 	private final ModelRenderer head;
+	private final ModelRenderer body;
+	private final ModelRenderer right_hand;
+	private final ModelRenderer left_hand;
+	private final ModelRenderer right_leg;
+	private final ModelRenderer left_leg;
 	private final ModelRenderer dolphin;
-	private final ModelRenderer bone;
-	private final ModelRenderer bone2;
-	private final ModelRenderer bone3;
-	private final ModelRenderer bone4;
+	private final ModelRenderer dolphin_head;
+	private final ModelRenderer nose;
+	private final ModelRenderer tail;
+	private final ModelRenderer tail_fin;
+	private final ModelRenderer back_fin;
+	private final ModelRenderer left_fin;
+	private final ModelRenderer right_fin;
 
 	public DolphinRiderModel() {
-		texWidth = 128;
-		texHeight = 128;
+		texWidth = 64;
+		texHeight = 64;
 
 		total = new ModelRenderer(this);
 		total.setPos(0.0F, 24.0F, 0.0F);
-		
+
 
 		zombie = new ModelRenderer(this);
-		zombie.setPos(0.0F, 12.0F, 9.0F);
+		zombie.setPos(0.0F, -9.0F, 10.0F);
 		total.addChild(zombie);
-		
 
-		left_leg = new ModelRenderer(this);
-		left_leg.setPos(4.0F, -24.0F, 0.0F);
-		zombie.addChild(left_leg);
-		setRotationAngle(left_leg, -0.7854F, 0.0F, -0.5236F);
-		left_leg.texOffs(112, 100).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 24.0F, 4.0F, 0.0F, false);
-		left_leg.texOffs(0, 0).addBox(-2.0F, 22.0F, -6.0F, 4.0F, 2.0F, 4.0F, 0.0F, false);
 
-		right_leg = new ModelRenderer(this);
-		right_leg.setPos(-4.0F, -24.0F, 0.0F);
-		zombie.addChild(right_leg);
-		setRotationAngle(right_leg, -0.7854F, 0.0F, 0.5236F);
-		right_leg.texOffs(93, 100).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 24.0F, 4.0F, 0.0F, false);
-		right_leg.texOffs(0, 0).addBox(-2.0F, 22.0F, -6.0F, 4.0F, 2.0F, 4.0F, 0.0F, false);
+		up = new ModelRenderer(this);
+		up.setPos(0.0F, 0.0F, 0.0F);
+		zombie.addChild(up);
+		setRotationAngle(up, 0.8727F, 0.0F, 0.0F);
 
-		body = new ModelRenderer(this);
-		body.setPos(0.0F, -31.0F, 0.0F);
-		zombie.addChild(body);
-		body.texOffs(0, 0).addBox(-7.0F, -17.0F, -3.0F, 14.0F, 24.0F, 6.0F, 0.0F, false);
-
-		left_hand = new ModelRenderer(this);
-		left_hand.setPos(7.0F, -46.0F, 0.0F);
-		zombie.addChild(left_hand);
-		left_hand.texOffs(112, 66).addBox(0.0F, -2.0F, -2.0F, 4.0F, 24.0F, 4.0F, 0.0F, false);
-
-		right_hand = new ModelRenderer(this);
-		right_hand.setPos(-7.0F, -46.0F, 0.0F);
-		zombie.addChild(right_hand);
-		right_hand.texOffs(112, 66).addBox(-4.0F, -2.0F, -2.0F, 4.0F, 24.0F, 4.0F, 0.0F, false);
 
 		head = new ModelRenderer(this);
-		head.setPos(0.0F, -48.0F, 0.0F);
-		zombie.addChild(head);
-		head.texOffs(0, 104).addBox(-6.0F, -12.0F, -6.0F, 12.0F, 12.0F, 12.0F, 0.0F, false);
+		head.setPos(0.0F, -12.0F, 0.0F);
+		up.addChild(head);
+		setRotationAngle(head, -0.4363F, 0.0F, 0.0F);
+		head.texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
+
+		body = new ModelRenderer(this);
+		body.setPos(0.0F, -12.0F, 0.0F);
+		up.addChild(body);
+		body.texOffs(0, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, false);
+
+		right_hand = new ModelRenderer(this);
+		right_hand.setPos(-5.0F, -10.0F, 0.0F);
+		up.addChild(right_hand);
+		setRotationAngle(right_hand, -1.4399F, 0.0F, -0.2618F);
+		right_hand.texOffs(32, 0).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+
+		left_hand = new ModelRenderer(this);
+		left_hand.setPos(5.0F, -10.0F, 0.0F);
+		up.addChild(left_hand);
+		setRotationAngle(left_hand, -1.4399F, 0.0F, 0.2618F);
+		left_hand.texOffs(32, 0).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+
+		right_leg = new ModelRenderer(this);
+		right_leg.setPos(-1.9F, 0.0F, 0.0F);
+		zombie.addChild(right_leg);
+		setRotationAngle(right_leg, -0.8727F, 0.0F, 0.8727F);
+		right_leg.texOffs(48, 0).addBox(-2.1F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+
+		left_leg = new ModelRenderer(this);
+		left_leg.setPos(1.9F, 0.0F, 0.0F);
+		zombie.addChild(left_leg);
+		setRotationAngle(left_leg, -0.8727F, 0.0F, -0.8727F);
+		left_leg.texOffs(48, 0).addBox(-1.9F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
 
 		dolphin = new ModelRenderer(this);
-		dolphin.setPos(0.0F, 0.0F, 0.0F);
+		dolphin.setPos(0.0F, 0.0F, -3.0F);
 		total.addChild(dolphin);
-		dolphin.texOffs(43, 1).addBox(-7.0F, -12.0F, -8.0F, 14.0F, 12.0F, 28.0F, 0.0F, false);
-		dolphin.texOffs(1, 32).addBox(-3.0F, -5.0F, -20.0F, 6.0F, 4.0F, 12.0F, 0.0F, false);
-		dolphin.texOffs(1, 50).addBox(-4.0F, -6.0F, 20.0F, 8.0F, 6.0F, 8.0F, 0.0F, false);
-		dolphin.texOffs(2, 67).addBox(-3.0F, -5.0F, 28.0F, 6.0F, 4.0F, 4.0F, 0.0F, false);
+		dolphin.texOffs(22, 19).addBox(-4.0F, -7.0F, 0.0F, 8.0F, 7.0F, 13.0F, 0.0F, false);
 
-		bone = new ModelRenderer(this);
-		bone.setPos(0.0F, 0.0F, 0.0F);
-		dolphin.addChild(bone);
-		setRotationAngle(bone, 0.0F, -0.2618F, -0.1745F);
-		bone.texOffs(3, 77).addBox(8.0F, -1.0F, 0.0F, 16.0F, 1.0F, 12.0F, 0.0F, false);
+		dolphin_head = new ModelRenderer(this);
+		dolphin_head.setPos(0.0F, -4.0F, -3.0F);
+		dolphin.addChild(dolphin_head);
+		dolphin_head.texOffs(0, 33).addBox(-4.0F, -3.0F, -3.0F, 8.0F, 7.0F, 6.0F, 0.0F, false);
 
-		bone2 = new ModelRenderer(this);
-		bone2.setPos(0.0F, 0.0F, 0.0F);
-		dolphin.addChild(bone2);
-		setRotationAngle(bone2, 0.0F, 0.2618F, 0.1745F);
-		bone2.texOffs(41, 43).addBox(-24.0F, -1.0F, 0.0F, 17.0F, 1.0F, 12.0F, 0.0F, false);
+		nose = new ModelRenderer(this);
+		nose.setPos(0.0F, 4.0F, -3.0F);
+		dolphin_head.addChild(nose);
+		nose.texOffs(51, 26).addBox(-1.0F, -2.0F, -4.0F, 2.0F, 2.0F, 4.0F, 0.0F, false);
 
-		bone3 = new ModelRenderer(this);
-		bone3.setPos(0.0F, -4.0F, 32.0F);
-		dolphin.addChild(bone3);
-		setRotationAngle(bone3, 0.4363F, 0.0F, 0.0F);
-		bone3.texOffs(2, 94).addBox(-6.0F, -1.0F, -1.0F, 12.0F, 1.0F, 4.0F, 0.0F, false);
+		tail = new ModelRenderer(this);
+		tail.setPos(0.0F, -2.5F, 14.0F);
+		dolphin.addChild(tail);
+		tail.texOffs(0, 46).addBox(-2.0F, -2.5F, -1.0F, 4.0F, 5.0F, 11.0F, 0.0F, false);
 
-		bone4 = new ModelRenderer(this);
-		bone4.setPos(0.0F, -12.0F, 10.0F);
-		dolphin.addChild(bone4);
-		setRotationAngle(bone4, -0.5236F, 0.0F, 0.0F);
-		bone4.texOffs(44, 92).addBox(-1.0F, -7.0F, 0.0F, 2.0F, 7.0F, 4.0F, 0.0F, false);
+		tail_fin = new ModelRenderer(this);
+		tail_fin.setPos(0.0F, 0.0F, 9.0F);
+		tail.addChild(tail_fin);
+		tail_fin.texOffs(32, 40).addBox(-5.0F, -0.5F, -1.0F, 10.0F, 1.0F, 6.0F, 0.0F, false);
+
+		back_fin = new ModelRenderer(this);
+		back_fin.setPos(0.0F, -11.0F, -2.0F);
+		dolphin.addChild(back_fin);
+		back_fin.texOffs(51, 16).addBox(-0.5F, 0.0F, 8.0F, 1.0F, 4.0F, 5.0F, 0.0F, false);
+
+		left_fin = new ModelRenderer(this);
+		left_fin.setPos(4.5F, 0.0F, 1.0F);
+		dolphin.addChild(left_fin);
+		left_fin.texOffs(48, 48).addBox(-0.5F, -4.0F, 0.0F, 1.0F, 4.0F, 7.0F, 0.0F, false);
+
+		right_fin = new ModelRenderer(this);
+		right_fin.setPos(-4.5F, 0.0F, 1.0F);
+		dolphin.addChild(right_fin);
+		right_fin.texOffs(48, 48).addBox(-0.5F, -4.0F, 0.0F, 1.0F, 4.0F, 7.0F, 0.0F, false);
 	}
 
 	@Override
 	public void setupAnim(DolphinRiderEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
-		this.head.xRot = headPitch / (180F / (float) Math.PI);
+		this.head.xRot = -0.4363F + headPitch / (180F / (float) Math.PI);
+		this.tail.xRot = 0.0F;
+		this.tail_fin.xRot = 0.0F;
+		if (Entity.getHorizontalDistanceSqr(entity.getDeltaMovement()) > 1.0E-7D) {
+			this.tail.xRot = -0.1F * MathHelper.cos(ageInTicks * 0.3F);
+			this.tail_fin.xRot = -0.2F * MathHelper.cos(ageInTicks * 0.3F);
+		}
 	}
 
 	@Override

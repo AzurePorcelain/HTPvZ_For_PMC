@@ -19,8 +19,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
@@ -29,7 +31,6 @@ import java.util.EnumSet;
 
 public class GargantuarEntity extends PVZZombieEntity {
 
-	private static final DataParameter<Boolean> HAS_IMP = EntityDataManager.defineId(GargantuarEntity.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Integer> TOOL_TYPE = EntityDataManager.defineId(GargantuarEntity.class, DataSerializers.INT);
 	public static final int DEATH_ANIM_CD = 100;
 	public boolean isSad = false;
@@ -38,20 +39,23 @@ public class GargantuarEntity extends PVZZombieEntity {
 		super(type, worldIn);
 		this.setIsWholeBody();
 	}
-	
+
 	@Override
 	public ILivingEntityData finalizeSpawn(IServerWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason,
 			ILivingEntityData spawnDataIn, CompoundNBT dataTag) {
 		if(! level.isClientSide) {
 			this.setToolType(GargantuarType.values()[this.getRandom().nextInt(GargantuarType.values().length)]);
+			ImpEntity imp = EntityRegister.IMP.get().create(level);
+			imp.moveTo(this.getX(), this.getY(), this.getZ(), this.yRot, 0.0F);
+			this.level.addFreshEntity(imp);
+			imp.startRiding(this);
 		}
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 	}
-	
+
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(HAS_IMP, true);
 		this.entityData.define(TOOL_TYPE, GargantuarType.DOLL.ordinal());
 	}
 	
@@ -69,12 +73,33 @@ public class GargantuarEntity extends PVZZombieEntity {
 	
 	public void throwImp(LivingEntity target) {
 		EntityUtil.playSound(this, SoundRegister.IMP_HAPPY.get());
-		ImpEntity imp = EntityRegister.IMP.get().create(level);
-		imp.throwByGargantuar(this, target);
-		EntityUtil.onEntitySpawn(level, imp, blockPosition().offset(0, this.getBbHeight(), 0));
-		this.setHasImp(false);
+		if(this.getControllingPassenger() instanceof ImpEntity) {
+			ImpEntity imp = (ImpEntity) this.getControllingPassenger();
+			imp.stopRiding();
+			imp.throwByGargantuar(this, target);
+		}
 	}
 	
+	@Override
+	public void die(DamageSource source) {
+		if(! this.level.isClientSide) {
+			if(this.getControllingPassenger() instanceof ImpEntity) {
+				this.getControllingPassenger().remove();
+			}
+		}
+		super.die(source);
+	}
+
+	@Override
+	public void remove() {
+		if(! this.level.isClientSide) {
+			if(this.getControllingPassenger() instanceof ImpEntity) {
+				this.getControllingPassenger().remove();
+			}
+		}
+		super.remove();
+	}
+
 	@Override
 	protected void setBodyStates(ZombieDropBodyEntity body) {
 		super.setBodyStates(body);
@@ -122,7 +147,15 @@ public class GargantuarEntity extends PVZZombieEntity {
 		if(this.isMiniZombie()) {
 			return EntitySize.scalable(0.6F, 1.8F);
 		}
-		return EntitySize.scalable(0.8f, 4f);
+		return EntitySize.scalable(1.5F, 2.7F);
+	}
+
+	@Override
+	public void positionRider(Entity passenger) {
+		if(this.hasPassenger(passenger)) {
+			Vector3d offset = new Vector3d(0.0D, 0.0D, -0.7D).yRot(- this.yBodyRot * ((float) Math.PI / 180F));
+			passenger.setPos(this.getX() + offset.x, this.getY() + this.getPassengersRidingOffset() + passenger.getMyRidingOffset(), this.getZ() + offset.z);
+		}
 	}
 	
 	public boolean canThrowImp() {
@@ -185,29 +218,17 @@ public class GargantuarEntity extends PVZZombieEntity {
 	@Override
 	public void readAdditionalSaveData(CompoundNBT compound) {
 		super.readAdditionalSaveData(compound);
-		if(compound.contains("has_imp")) {
-			this.setHasImp(compound.getBoolean("has_imp"));
-		}
 		if(compound.contains("weapon_type")) {
 			this.setToolType(GargantuarType.values()[compound.getInt("weapon_type")]);
 		}
 	}
-	
+
 	@Override
 	public void addAdditionalSaveData(CompoundNBT compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putBoolean("has_imp", this.hasImp());
 		compound.putInt("weapon_type", this.getToolType().ordinal());
 	}
-	
-	public void setHasImp(boolean has) {
-		this.entityData.set(HAS_IMP, has);
-	}
-	
-	public boolean hasImp() {
-		return this.entityData.get(HAS_IMP);
-	}
-	
+
 	public void setToolType(GargantuarType type) {
 		this.entityData.set(TOOL_TYPE, type.ordinal());
 	}
@@ -293,7 +314,7 @@ public class GargantuarEntity extends PVZZombieEntity {
 		
 		@Override
 		public boolean canUse() {
-			return this.attacker.hasImp() && this.attacker.canThrowImp();
+			return this.attacker.getControllingPassenger() instanceof ImpEntity && this.attacker.canThrowImp();
 		}
 		
 		@Override
@@ -315,7 +336,7 @@ public class GargantuarEntity extends PVZZombieEntity {
 		public void tick() {
 			if(this.attacker.canNormalUpdate() && this.attacker.getAttackTime() < 0) {
 				this.attacker.setAttackTime(this.attacker.getAttackTime() + 1);
-				if(this.attacker.hasImp() && - this.attacker.getAttackTime() == this.attacker.getThrowCD() * 1 / 4) {
+				if(this.attacker.getControllingPassenger() instanceof ImpEntity && - this.attacker.getAttackTime() == this.attacker.getThrowCD() * 1 / 4) {
 					this.attacker.throwImp(this.attacker.getTarget());
 				}
 			}

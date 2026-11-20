@@ -14,111 +14,89 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class OldZombieModel extends PVZZombieModel<OldZombieEntity> {
 	private final ModelRenderer total;
-	private final ModelRenderer left_leg;
 	private final ModelRenderer right_leg;
+	private final ModelRenderer left_leg;
 	private final ModelRenderer up;
-	private final ModelRenderer body;
 	private final ModelRenderer head;
-	private final ModelRenderer bone3;
-	private final ModelRenderer normal_eyes;
-	private final ModelRenderer red_eyes;
+	private final ModelRenderer body;
 	private final ModelRenderer right_hand;
 	private final ModelRenderer left_hand;
 	private final ModelRenderer paper;
-	private final ModelRenderer bone2;
-	private final ModelRenderer bone;
+	private final ModelRenderer folded_right_page_r1;
+	private final ModelRenderer folded_left_page_r1;
 
 	public OldZombieModel() {
-		texWidth = 256;
-		texHeight = 256;
+		texWidth = 128;
+		texHeight = 128;
 
 		total = new ModelRenderer(this);
 		total.setPos(0.0F, 24.0F, 0.0F);
-		
 
-		left_leg = new ModelRenderer(this);
-		left_leg.setPos(4.0F, -24.0F, 0.0F);
-		total.addChild(left_leg);
-		left_leg.texOffs(230, 225).addBox(-3.0F, 0.0F, -3.0F, 6.0F, 22.0F, 6.0F, 0.0F, false);
-		left_leg.texOffs(196, 242).addBox(-3.0F, 22.0F, -5.0F, 6.0F, 2.0F, 9.0F, 0.0F, false);
 
 		right_leg = new ModelRenderer(this);
-		right_leg.setPos(-4.0F, -24.0F, 0.0F);
+		right_leg.setPos(-1.9F, -12.0F, 0.0F);
 		total.addChild(right_leg);
-		right_leg.texOffs(230, 192).addBox(-3.0F, 0.0F, -3.0F, 6.0F, 22.0F, 6.0F, 0.0F, false);
-		right_leg.texOffs(191, 220).addBox(-3.0F, 22.0F, -5.0F, 6.0F, 2.0F, 9.0F, 0.0F, false);
+		setRotationAngle(right_leg, 0.192F, 0.0F, 0.0349F);
+		right_leg.texOffs(0, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		right_leg.texOffs(0, 32).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F, false);
+
+		left_leg = new ModelRenderer(this);
+		left_leg.setPos(1.9F, -12.0F, 0.0F);
+		total.addChild(left_leg);
+		setRotationAngle(left_leg, -0.1745F, 0.0F, -0.0349F);
+		left_leg.texOffs(16, 48).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		left_leg.texOffs(0, 48).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F, false);
 
 		up = new ModelRenderer(this);
-		up.setPos(0.0F, -24.0F, 0.0F);
+		up.setPos(0.0F, -12.0F, 0.0F);
 		total.addChild(up);
-		
 
-		body = new ModelRenderer(this);
-		body.setPos(0.0F, 0.0F, 0.0F);
-		up.addChild(body);
-		body.texOffs(3, 221).addBox(-8.0F, -24.0F, -4.0F, 16.0F, 24.0F, 8.0F, 0.0F, false);
 
 		head = new ModelRenderer(this);
-		head.setPos(0.0F, -24.0F, 0.0F);
+		head.setPos(0.0F, -12.0F, 0.0F);
 		up.addChild(head);
-		head.texOffs(66, 182).addBox(-7.0F, -14.0F, -7.0F, 14.0F, 14.0F, 14.0F, 0.0F, false);
-		head.texOffs(130, 207).addBox(-7.0F, -15.0F, 2.0F, 13.0F, 1.0F, 1.0F, 0.0F, false);
-		head.texOffs(169, 208).addBox(-6.0F, -15.0F, -3.0F, 13.0F, 1.0F, 1.0F, 0.0F, false);
+		setRotationAngle(head, 0.1745F, 0.0698F, 0.0524F);
+		head.texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
+		head.texOffs(32, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
 
-		bone3 = new ModelRenderer(this);
-		bone3.setPos(0.0F, -10.0F, 0.0F);
-		head.addChild(bone3);
-		setRotationAngle(bone3, 0.3491F, 0.0F, 0.0F);
-		bone3.texOffs(200, 188).addBox(-8.0F, -1.0F, -10.0F, 1.0F, 1.0F, 11.0F, 0.0F, false);
-		bone3.texOffs(140, 180).addBox(7.0F, -1.0F, -10.0F, 1.0F, 1.0F, 11.0F, 0.0F, false);
-		bone3.texOffs(183, 187).addBox(-7.0F, -1.0F, -10.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-		bone3.texOffs(206, 172).addBox(5.0F, -1.0F, -10.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-		bone3.texOffs(227, 175).addBox(-1.0F, -1.0F, -10.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-		bone3.texOffs(241, 169).addBox(-5.0F, -2.0F, -10.0F, 4.0F, 3.0F, 1.0F, 0.0F, false);
-		bone3.texOffs(174, 175).addBox(1.0F, -2.0F, -10.0F, 4.0F, 3.0F, 1.0F, 0.0F, false);
-
-		normal_eyes = new ModelRenderer(this);
-		normal_eyes.setPos(0.0F, -2.0F, -12.0F);
-		head.addChild(normal_eyes);
-		normal_eyes.texOffs(49, 178).addBox(-6.0F, -11.0F, 4.95F, 5.0F, 5.0F, 1.0F, 0.0F, false);
-		normal_eyes.texOffs(50, 186).addBox(1.0F, -11.0F, 4.95F, 5.0F, 5.0F, 1.0F, 0.0F, false);
-
-		red_eyes = new ModelRenderer(this);
-		red_eyes.setPos(0.0F, -2.0F, -12.0F);
-		head.addChild(red_eyes);
-		red_eyes.texOffs(49, 169).addBox(1.0F, -11.0F, 4.95F, 5.0F, 5.0F, 1.0F, 0.0F, false);
-		red_eyes.texOffs(50, 160).addBox(-6.0F, -11.0F, 4.95F, 5.0F, 5.0F, 1.0F, 0.0F, false);
+		body = new ModelRenderer(this);
+		body.setPos(0.0F, -12.0F, 0.0F);
+		up.addChild(body);
+		body.texOffs(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, false);
+		body.texOffs(16, 32).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.25F, false);
 
 		right_hand = new ModelRenderer(this);
-		right_hand.setPos(-11.0F, -21.0F, 0.0F);
+		right_hand.setPos(-5.0F, -10.0F, 0.0F);
 		up.addChild(right_hand);
 		setRotationAngle(right_hand, -1.0472F, 0.0F, 0.0F);
-		right_hand.texOffs(148, 222).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 24.0F, 6.0F, 0.0F, false);
-
-		paper = new ModelRenderer(this);
-		paper.setPos(11.0F, 16.0F, -10.0F);
-		right_hand.addChild(paper);
-		setRotationAngle(paper, -0.3491F, 0.0F, 0.0F);
-		
-
-		bone2 = new ModelRenderer(this);
-		bone2.setPos(10.0F, 0.0F, 3.0F);
-		paper.addChild(bone2);
-		setRotationAngle(bone2, 0.0F, 0.0F, 0.8727F);
-		bone2.texOffs(88, 212).addBox(0.0F, -2.0F, -13.0F, 1.0F, 16.0F, 25.0F, 0.0F, false);
-
-		bone = new ModelRenderer(this);
-		bone.setPos(-10.0F, 0.0F, 3.0F);
-		paper.addChild(bone);
-		setRotationAngle(bone, 0.0F, 0.0F, -0.8727F);
-		bone.texOffs(5, 174).addBox(-1.0F, -2.0F, -13.0F, 1.0F, 15.0F, 25.0F, 0.0F, false);
+		right_hand.texOffs(40, 16).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		right_hand.texOffs(40, 32).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F, false);
 
 		left_hand = new ModelRenderer(this);
-		left_hand.setPos(11.0F, -21.0F, 0.0F);
+		left_hand.setPos(5.0F, -10.0F, 0.0F);
 		up.addChild(left_hand);
 		setRotationAngle(left_hand, -1.0472F, 0.0F, 0.0F);
-		left_hand.texOffs(59, 221).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 24.0F, 6.0F, 0.0F, false);
-		
+		left_hand.texOffs(32, 48).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		left_hand.texOffs(48, 48).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F, false);
+
+		paper = new ModelRenderer(this);
+		paper.setPos(0.0F, 0.0F, 0.0F);
+		left_hand.addChild(paper);
+		setRotationAngle(paper, 1.0472F, 0.0F, 0.0F);
+
+
+		folded_right_page_r1 = new ModelRenderer(this);
+		folded_right_page_r1.setPos(-5.0F, 5.0F, -10.0F);
+		paper.addChild(folded_right_page_r1);
+		setRotationAngle(folded_right_page_r1, 0.0F, 0.2094F, 0.0F);
+		folded_right_page_r1.texOffs(86, 40).addBox(-7.0F, -5.0F, -0.5F, 7.0F, 10.0F, 1.0F, 0.0F, false);
+
+		folded_left_page_r1 = new ModelRenderer(this);
+		folded_left_page_r1.setPos(-5.0F, 5.0F, -10.0F);
+		paper.addChild(folded_left_page_r1);
+		setRotationAngle(folded_left_page_r1, 0.0F, -0.2094F, 0.0F);
+		folded_left_page_r1.texOffs(66, 40).addBox(0.0F, -5.0F, -0.5F, 7.0F, 10.0F, 1.0F, 0.0F, false);
+
 		this.rightHandOriginAngel = - 60;
 	}
 
@@ -128,8 +106,6 @@ public class OldZombieModel extends PVZZombieModel<OldZombieEntity> {
 		final boolean isPaperDestroyed = entity.isAngry();
 		this.isLeftHandFree = isPaperDestroyed;
 		this.isRightHandFree = isPaperDestroyed;
-		this.red_eyes.visible = isPaperDestroyed;
-		this.normal_eyes.visible = ! isPaperDestroyed;
 		this.paper.visible = ! isPaperDestroyed;
 	}
 	

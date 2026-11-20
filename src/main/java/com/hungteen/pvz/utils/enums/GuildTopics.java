@@ -10,7 +10,7 @@ public enum GuildTopics {
 	ZOMBIE_HOUSE(1),
 	PLANT_OBTAIN(2);
 	
-	public int pageNum;
+	public final int pageNum;
 	
 	GuildTopics(int num) {
 		this.pageNum = num;

@@ -22,6 +22,7 @@ public class ImpEntity extends PVZZombieEntity {
 	
 	public ImpEntity(EntityType<? extends CreatureEntity> type, World worldIn) {
 		super(type, worldIn);
+		this.canLostHand = false;
 	}
 
 	@Override
@@ -60,10 +61,24 @@ public class ImpEntity extends PVZZombieEntity {
 	public boolean canNormalUpdate() {
 		return super.canNormalUpdate() && ! this.isFalling;
 	}
+
+	@Override
+	public boolean isBaby() {
+		return true;
+	}
 	
+
+	@Override
+	public boolean isInvulnerableTo(DamageSource source) {
+		if(this.getVehicle() instanceof GargantuarEntity) {
+			return true;
+		}
+		return super.isInvulnerableTo(source);
+	}
+
 	@Override
 	protected boolean isZombieInvulnerableTo(DamageSource source) {
-		return super.isZombieInvulnerableTo(source) || this.protectTick > 0;
+		return super.isZombieInvulnerableTo(source) || this.protectTick > 0 || this.getVehicle() instanceof GargantuarEntity;
 	}
 	
 	public void throwByGargantuar(GargantuarEntity entity, LivingEntity target) {
@@ -96,7 +111,7 @@ public class ImpEntity extends PVZZombieEntity {
 		if(this.isMiniZombie()) {
 			return EntitySize.scalable(0.2F, 0.45F);
 		}
-		return EntitySize.scalable(0.6F, 1.2F);
+		return EntitySize.scalable(0.3F, 0.7F);
 	}
 	
 	@Override

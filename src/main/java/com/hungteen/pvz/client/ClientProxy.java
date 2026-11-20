@@ -4,17 +4,16 @@ import com.hungteen.pvz.client.render.layer.fullskin.ColdLayer;
 import com.hungteen.pvz.common.CommonProxy;
 import com.hungteen.pvz.common.block.BlockRegister;
 import com.hungteen.pvz.common.block.others.SteelLadderBlock;
-import com.hungteen.pvz.common.item.ItemRegister;
 import com.hungteen.pvz.common.item.armor.BucketArmorItem;
 import com.hungteen.pvz.common.item.armor.ConeArmorItem;
 import com.hungteen.pvz.common.item.armor.FootballArmorItem;
 import com.hungteen.pvz.common.item.armor.GigaArmorItem;
-import com.hungteen.pvz.utils.StringUtil;
+import com.hungteen.pvz.common.item.tool.zombie.JackBoxItem;
+import com.hungteen.pvz.common.item.tool.zombie.ScreenDoorItem;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.LivingRenderer;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -39,10 +38,9 @@ public class ClientProxy extends CommonProxy{
 		BucketArmorItem.initArmorModel();
 		FootballArmorItem.initArmorModel();
 		GigaArmorItem.initArmorModel();
+		ScreenDoorItem.initItemModel();
+		JackBoxItem.initItemModel();
 		KeyBindRegister.init();
-		ItemModelsProperties.register(ItemRegister.SCREEN_DOOR.get(), StringUtil.prefix("blocking"), (stack, world, entity) -> {
-	         return entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F;
-	    });
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })

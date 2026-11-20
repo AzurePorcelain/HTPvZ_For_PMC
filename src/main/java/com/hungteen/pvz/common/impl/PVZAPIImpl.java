@@ -18,7 +18,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.*;
 import java.util.function.Supplier;
 
-;
+
 
 public class PVZAPIImpl implements IPVZAPI{
 

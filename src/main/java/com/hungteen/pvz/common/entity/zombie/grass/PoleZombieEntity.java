@@ -1,6 +1,8 @@
 package com.hungteen.pvz.common.entity.zombie.grass;
 
+import com.hungteen.pvz.api.enums.BodyType;
 import com.hungteen.pvz.api.types.IPlantType;
+import com.hungteen.pvz.common.entity.EntityRegister;
 import com.hungteen.pvz.common.entity.ai.goal.target.PVZRandomTargetGoal;
 import com.hungteen.pvz.common.entity.plant.PVZPlantEntity;
 import com.hungteen.pvz.common.entity.zombie.PVZZombieEntity;
@@ -82,7 +84,8 @@ public class PoleZombieEntity extends PVZZombieEntity{
 		super.attractBy(defender);
 		if(this.hasPole()) {
 		    this.setPole(false);
-		    this.setDeltaMovement(0, 0, 0);
+		    this.setDeltaMovement(0, this.getDeltaMovement().y, 0);
+			this.dropPole();
 		    EntityUtil.playSound(this, SoundRegister.HAMMER_BONK.get());
 		}
 	}
@@ -101,6 +104,23 @@ public class PoleZombieEntity extends PVZZombieEntity{
 	protected void setBodyStates(ZombieDropBodyEntity body) {
 		super.setBodyStates(body);
 		body.setHandDefence(this.hasPole());
+	}
+
+	@Override
+	protected void onFallBody(DamageSource source) {
+		super.onFallBody(source);
+		if(this.hasPole()) {
+			this.dropPole();
+		}
+	}
+
+	/**
+	 * spawn an independent pole body part.
+	 */
+	private void dropPole() {
+		ZombieDropBodyEntity body = EntityRegister.ZOMBIE_DROP_BODY.get().create(level);
+		body.droppedByOwner(this, null, BodyType.DEFENCE);
+		level.addFreshEntity(body);
 	}
 	
 	/**
@@ -259,6 +279,7 @@ public class PoleZombieEntity extends PVZZombieEntity{
 			} else if(time == 1) {
 				if(++ this.zombie.pole_jump_cnt == this.zombie.getMaxJumpCount()) {
 					this.zombie.setPole(false);
+					this.zombie.dropPole();
 				}
 			}
 			this.zombie.setAttackTime(Math.max(0, time - 1));

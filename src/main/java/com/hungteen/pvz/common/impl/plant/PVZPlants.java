@@ -244,7 +244,7 @@ public final class PVZPlants extends PlantType {
 			.entityType(() -> EntityRegister.SQUASH.get())
 			.summonCard(() -> ItemRegister.SQUASH_CARD.get())
 			.enjoyCard(() -> ItemRegister.SQUASH_ENJOY_CARD.get())
-			.plantModel(() -> SquashModel::new).scale(0.5F)
+			.plantModel(() -> SquashModel::new).scale(1.0F)
 			.cdSkill(Arrays.asList(SkillTypes.MORE_MORE_LIFE, SkillTypes.SQUASH_ENHANCE_STRENGTH, SkillTypes.SQUASH_AGAIN))
 	);
 	

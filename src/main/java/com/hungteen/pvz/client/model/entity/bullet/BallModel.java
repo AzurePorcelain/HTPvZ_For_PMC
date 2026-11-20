@@ -7,8 +7,8 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
-// Made with Blockbench 3.7.5
-// Exported for Minecraft version 1.15
+// Made with Blockbench 5.2.2
+// Exported for Minecraft version 1.15 - 1.16 with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
@@ -16,12 +16,12 @@ public class BallModel extends EntityModel<BallEntity> {
 	private final ModelRenderer total;
 
 	public BallModel() {
-		texWidth = 16;
-		texHeight = 16;
+		texWidth = 64;
+		texHeight = 32;
 
 		total = new ModelRenderer(this);
 		total.setPos(0.0F, 24.0F, 0.0F);
-		total.texOffs(0, 0).addBox(-2.0F, -4.0F, -2.0F, 4.0F, 4.0F, 4.0F, 0.0F, false);
+		total.texOffs(0, 0).addBox(-4.5F, -6.5F, -4.5F, 9.0F, 9.0F, 9.0F, -2.5F, false);
 	}
 
 	@Override

@@ -21,20 +21,20 @@ public class LadderModel<T extends PVZPlantEntity> extends EntityModel<T> {
 		texHeight = 64;
 
 		total = new ModelRenderer(this);
-		total.setPos(0.0F, -5.0F, 0.0F);
-		total.texOffs(14, 10).addBox(-12.0F, -22.0F, -2.0F, 3.0F, 50.0F, 4.0F, 0.1F, false);
-		total.texOffs(0, 10).addBox(9.0F, -22.0F, -2.0F, 3.0F, 50.0F, 4.0F, 0.1F, false);
-		total.texOffs(28, 50).addBox(8.0F, 28.0F, -3.0F, 5.0F, 1.0F, 6.0F, 0.0F, false);
-		total.texOffs(28, 57).addBox(-13.0F, 28.0F, -3.0F, 5.0F, 1.0F, 6.0F, 0.0F, false);
+		total.setPos(0.0F, 9.5F, 0.0F);
+		total.texOffs(0, 0).addBox(-6.0F, -11.0F, -1.0F, 1.5F, 25.0F, 2.0F, 0.05F, false);
+		total.texOffs(10, 0).addBox(4.5F, -11.0F, -1.0F, 1.5F, 25.0F, 2.0F, 0.05F, false);
+		total.texOffs(0, 30).addBox(4.0F, 14.0F, -1.5F, 2.5F, 0.5F, 3.0F, 0.0F, false);
+		total.texOffs(12, 30).addBox(-6.5F, 14.0F, -1.5F, 2.5F, 0.5F, 3.0F, 0.0F, false);
 
 		floor = new ModelRenderer(this);
 		floor.setPos(0.0F, 0.0F, 0.0F);
 		total.addChild(floor);
-		floor.texOffs(0, 4).addBox(-9.0F, 20.0F, -2.0F, 18.0F, 2.0F, 4.0F, 0.0F, false);
-		floor.texOffs(0, 4).addBox(-9.0F, 12.0F, -2.0F, 18.0F, 2.0F, 4.0F, 0.0F, false);
-		floor.texOffs(0, 4).addBox(-9.0F, 4.0F, -2.0F, 18.0F, 2.0F, 4.0F, 0.0F, false);
-		floor.texOffs(0, 4).addBox(-9.0F, -4.0F, -2.0F, 18.0F, 2.0F, 4.0F, 0.0F, false);
-		floor.texOffs(0, 4).addBox(-9.0F, -12.0F, -2.0F, 18.0F, 2.0F, 4.0F, 0.0F, false);
+		floor.texOffs(22, 0).addBox(-4.5F, 10.0F, -1.0F, 9.0F, 1.0F, 2.0F, 0.0F, false);
+		floor.texOffs(22, 4).addBox(-4.5F, 6.0F, -1.0F, 9.0F, 1.0F, 2.0F, 0.0F, false);
+		floor.texOffs(22, 8).addBox(-4.5F, 2.0F, -1.0F, 9.0F, 1.0F, 2.0F, 0.0F, false);
+		floor.texOffs(22, 12).addBox(-4.5F, -2.0F, -1.0F, 9.0F, 1.0F, 2.0F, 0.0F, false);
+		floor.texOffs(22, 16).addBox(-4.5F, -6.0F, -1.0F, 9.0F, 1.0F, 2.0F, 0.0F, false);
 	}
 
 	@Override

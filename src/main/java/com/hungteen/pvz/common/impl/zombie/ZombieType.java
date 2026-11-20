@@ -162,7 +162,7 @@ public abstract class ZombieType extends PAZType implements IZombieType {
 		protected int sunCost = 9999;
 		protected int requiredLevel = 100;
 		protected int xpPoint = 0;
-		protected float renderScale = 0.5F;
+		protected float renderScale = 1.0F;
 		protected ICoolDown coolDown = CoolDowns.DEFAULT;
 		protected IRankType rankType = RankTypes.WHITE;
 		protected ResourceLocation entityRenderResource;

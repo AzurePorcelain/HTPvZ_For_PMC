@@ -13,131 +13,126 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 public class SnorkelZombieModel extends PVZZombieModel<SnorkelZombieEntity> {
 	private final ModelRenderer total;
 	private final ModelRenderer right_leg;
-	private final ModelRenderer right_foot;
-	private final ModelRenderer left_leg;
-	private final ModelRenderer left_foot;
-	private final ModelRenderer up;
-	private final ModelRenderer left_hand;
-	private final ModelRenderer armor;
-	private final ModelRenderer bone;
-	private final ModelRenderer bone2;
-	private final ModelRenderer right_hand;
-	private final ModelRenderer bone3;
+	private final ModelRenderer right_pants;
 	private final ModelRenderer bone4;
-	private final ModelRenderer bone5;
-	private final ModelRenderer body;
+	private final ModelRenderer left_leg;
+	private final ModelRenderer left_pants;
+	private final ModelRenderer bone3;
+	private final ModelRenderer up;
 	private final ModelRenderer head;
-	private final ModelRenderer bone6;
-	private final ModelRenderer bone7;
+	private final ModelRenderer hat;
+	private final ModelRenderer bone2;
+	private final ModelRenderer bone;
+	private final ModelRenderer cube_r1;
+	private final ModelRenderer body;
+	private final ModelRenderer jacket;
+	private final ModelRenderer right_hand;
+	private final ModelRenderer right_sleeve;
+	private final ModelRenderer left_hand;
+	private final ModelRenderer left_sleeve;
 
 	public SnorkelZombieModel() {
-		texWidth = 128;
-		texHeight = 128;
+		texWidth = 64;
+		texHeight = 64;
 
 		total = new ModelRenderer(this);
 		total.setPos(0.0F, 24.0F, 0.0F);
-		
+
 
 		right_leg = new ModelRenderer(this);
-		right_leg.setPos(-4.0F, -25.0F, 0.0F);
+		right_leg.setPos(-1.9F, -12.0F, 0.0F);
 		total.addChild(right_leg);
-		right_leg.texOffs(1, 64).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 23.0F, 4.0F, 0.0F, false);
+		right_leg.texOffs(0, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
 
-		right_foot = new ModelRenderer(this);
-		right_foot.setPos(0.0F, 24.0F, 0.0F);
-		right_leg.addChild(right_foot);
-		right_foot.texOffs(22, 73).addBox(-2.0F, -1.0F, -11.0F, 4.0F, 2.0F, 14.0F, 0.0F, false);
-		right_foot.texOffs(56, 95).addBox(2.0F, -1.0F, -10.0F, 1.0F, 2.0F, 6.0F, 0.0F, false);
-		right_foot.texOffs(65, 81).addBox(-3.0F, -1.0F, -10.0F, 1.0F, 2.0F, 6.0F, 0.0F, false);
-
-		left_leg = new ModelRenderer(this);
-		left_leg.setPos(4.0F, -25.0F, 0.0F);
-		total.addChild(left_leg);
-		left_leg.texOffs(57, 2).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 23.0F, 4.0F, 0.0F, false);
-
-		left_foot = new ModelRenderer(this);
-		left_foot.setPos(0.0F, 24.0F, 0.0F);
-		left_leg.addChild(left_foot);
-		left_foot.texOffs(62, 62).addBox(-2.0F, -1.0F, -11.0F, 4.0F, 2.0F, 14.0F, 0.0F, false);
-		left_foot.texOffs(49, 64).addBox(2.0F, -1.0F, -10.0F, 1.0F, 2.0F, 6.0F, 0.0F, false);
-		left_foot.texOffs(60, 50).addBox(-3.0F, -1.0F, -10.0F, 1.0F, 2.0F, 6.0F, 0.0F, false);
-
-		up = new ModelRenderer(this);
-		up.setPos(0.0F, -25.0F, 0.0F);
-		total.addChild(up);
-		
-
-		left_hand = new ModelRenderer(this);
-		left_hand.setPos(10.0F, -23.0F, 0.0F);
-		up.addChild(left_hand);
-		left_hand.texOffs(94, 0).addBox(-2.0F, -2.0F, -2.0F, 4.0F, 25.0F, 4.0F, 0.0F, false);
-
-		armor = new ModelRenderer(this);
-		armor.setPos(2.0F, 3.0F, 0.0F);
-		left_hand.addChild(armor);
-		armor.texOffs(76, 3).addBox(0.0F, -2.0F, -3.0F, 1.0F, 5.0F, 6.0F, 0.0F, false);
-
-		bone = new ModelRenderer(this);
-		bone.setPos(0.0F, 0.0F, 3.0F);
-		armor.addChild(bone);
-		setRotationAngle(bone, 0.0F, -1.1345F, 0.0F);
-		bone.texOffs(79, 18).addBox(-0.866F, -2.0F, -0.5F, 1.0F, 5.0F, 5.0F, 0.0F, false);
-
-		bone2 = new ModelRenderer(this);
-		bone2.setPos(0.0F, 1.0F, -2.0F);
-		armor.addChild(bone2);
-		setRotationAngle(bone2, 0.0F, 1.1345F, 0.0F);
-		bone2.texOffs(80, 35).addBox(0.0F, -3.0F, -4.0F, 1.0F, 5.0F, 4.0F, 0.0F, false);
-
-		right_hand = new ModelRenderer(this);
-		right_hand.setPos(-10.0F, -23.0F, 0.0F);
-		up.addChild(right_hand);
-		right_hand.texOffs(112, 1).addBox(-2.0F, -2.0F, -2.0F, 4.0F, 25.0F, 4.0F, 0.0F, false);
-
-		bone3 = new ModelRenderer(this);
-		bone3.setPos(2.0F, -2.0F, 0.0F);
-		right_hand.addChild(bone3);
-		bone3.texOffs(80, 89).addBox(-5.0F, 3.0F, -3.0F, 1.0F, 5.0F, 6.0F, 0.0F, false);
+		right_pants = new ModelRenderer(this);
+		right_pants.setPos(1.9F, 12.0F, 0.0F);
+		right_leg.addChild(right_pants);
+		right_pants.texOffs(0, 32).addBox(-3.9F, -12.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F, false);
 
 		bone4 = new ModelRenderer(this);
-		bone4.setPos(-4.0F, 5.0F, -2.0F);
-		bone3.addChild(bone4);
-		setRotationAngle(bone4, 0.0F, -1.1345F, 0.0F);
-		bone4.texOffs(76, 103).addBox(-1.0F, -2.0F, -4.0F, 1.0F, 5.0F, 4.0F, 0.0F, false);
+		bone4.setPos(-2.0F, 0.0F, -2.0F);
+		right_pants.addChild(bone4);
+		bone4.texOffs(44, 20).addBox(-2.5F, 0.0F, -10.0F, 5.0F, 0.0F, 10.0F, 0.0F, false);
 
-		bone5 = new ModelRenderer(this);
-		bone5.setPos(-2.0F, 3.0F, 2.0F);
-		right_hand.addChild(bone5);
-		setRotationAngle(bone5, 0.0F, 1.1345F, 0.0F);
-		bone5.texOffs(96, 47).addBox(-1.0F, -2.0F, 0.0F, 1.0F, 5.0F, 4.0F, 0.0F, false);
+		left_leg = new ModelRenderer(this);
+		left_leg.setPos(1.9F, -12.0F, 0.0F);
+		total.addChild(left_leg);
+		left_leg.texOffs(16, 48).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
 
-		body = new ModelRenderer(this);
-		body.setPos(0.0F, 0.0F, 0.0F);
-		up.addChild(body);
-		body.texOffs(1, 93).addBox(-8.0F, -25.0F, -3.0F, 16.0F, 25.0F, 6.0F, 0.0F, false);
+		left_pants = new ModelRenderer(this);
+		left_pants.setPos(-1.9F, 12.0F, 0.0F);
+		left_leg.addChild(left_pants);
+		left_pants.texOffs(0, 48).addBox(-0.1F, -12.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F, false);
+
+		bone3 = new ModelRenderer(this);
+		bone3.setPos(2.0F, 0.0F, -2.0F);
+		left_pants.addChild(bone3);
+		bone3.texOffs(44, 20).addBox(-2.5F, 0.0F, -10.0F, 5.0F, 0.0F, 10.0F, 0.0F, false);
+
+		up = new ModelRenderer(this);
+		up.setPos(0.0F, 0.0F, 0.0F);
+		total.addChild(up);
+
 
 		head = new ModelRenderer(this);
-		head.setPos(0.0F, -25.0F, 0.0F);
+		head.setPos(0.0F, -24.0F, 0.0F);
 		up.addChild(head);
-		head.texOffs(80, 104).addBox(-6.0F, -12.0F, -6.0F, 12.0F, 12.0F, 12.0F, 0.0F, false);
-		head.texOffs(102, 89).addBox(6.0F, -8.0F, -6.0F, 1.0F, 2.0F, 12.0F, 0.0F, false);
-		head.texOffs(102, 73).addBox(-7.0F, -8.0F, -6.0F, 1.0F, 2.0F, 12.0F, 0.0F, false);
-		head.texOffs(102, 68).addBox(-6.0F, -8.0F, 6.0F, 12.0F, 2.0F, 1.0F, 0.0F, false);
-		head.texOffs(102, 60).addBox(-6.0F, -9.0F, -7.0F, 12.0F, 4.0F, 1.0F, 0.0F, false);
-		head.texOffs(110, 56).addBox(-4.0F, -5.0F, -7.0F, 8.0F, 1.0F, 1.0F, 0.0F, false);
-		head.texOffs(110, 52).addBox(-4.0F, -10.0F, -7.0F, 8.0F, 1.0F, 1.0F, 0.0F, false);
+		head.texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
 
-		bone6 = new ModelRenderer(this);
-		bone6.setPos(0.0F, 0.0F, -7.0F);
-		head.addChild(bone6);
-		bone6.texOffs(118, 45).addBox(-1.0F, -2.0F, -2.0F, 2.0F, 2.0F, 3.0F, 0.0F, false);
-		bone6.texOffs(110, 39).addBox(-8.0F, -2.0F, -2.0F, 7.0F, 2.0F, 2.0F, 0.0F, false);
+		hat = new ModelRenderer(this);
+		hat.setPos(0.0F, 24.0F, 0.0F);
+		head.addChild(hat);
+		hat.texOffs(32, 0).addBox(-4.0F, -32.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
 
-		bone7 = new ModelRenderer(this);
-		bone7.setPos(-7.0F, -1.0F, 0.0F);
-		bone6.addChild(bone7);
-		setRotationAngle(bone7, 1.309F, -0.6981F, 0.0F);
-		bone7.texOffs(40, 109).addBox(-1.6428F, -1.6943F, -0.3237F, 2.0F, 2.0F, 17.0F, 0.0F, false);
+		bone2 = new ModelRenderer(this);
+		bone2.setPos(-5.0F, -25.0F, -5.0F);
+		hat.addChild(bone2);
+		setRotationAngle(bone2, -0.0873F, 0.3491F, 0.1745F);
+		bone2.texOffs(24, 0).addBox(3.0F, -1.0F, -1.0F, 4.0F, 3.0F, 2.0F, 0.0F, false);
+		bone2.texOffs(52, 17).addBox(-0.5F, -0.5F, -0.75F, 5.0F, 2.0F, 1.0F, 0.0F, false);
+		bone2.texOffs(60, 42).addBox(-1.0F, -8.5F, -0.75F, 1.0F, 10.0F, 1.0F, 0.0F, false);
+		bone2.texOffs(60, 53).addBox(-1.0F, -8.5F, -0.75F, 1.0F, 10.0F, 1.0F, 0.1F, false);
+
+		bone = new ModelRenderer(this);
+		bone.setPos(0.0F, -8.0F, 1.25F);
+		bone2.addChild(bone);
+
+
+		cube_r1 = new ModelRenderer(this);
+		cube_r1.setPos(0.0F, -2.0F, -1.5F);
+		bone.addChild(cube_r1);
+		setRotationAngle(cube_r1, -0.3927F, 0.0F, 0.0F);
+		cube_r1.texOffs(0, 0).addBox(-1.5F, -4.0F, -0.5F, 2.0F, 6.0F, 2.0F, 0.0F, false);
+
+		body = new ModelRenderer(this);
+		body.setPos(0.0F, -24.0F, 0.0F);
+		up.addChild(body);
+		body.texOffs(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, false);
+
+		jacket = new ModelRenderer(this);
+		jacket.setPos(0.0F, 24.0F, 0.0F);
+		body.addChild(jacket);
+		jacket.texOffs(16, 32).addBox(-4.0F, -24.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.25F, false);
+
+		right_hand = new ModelRenderer(this);
+		right_hand.setPos(-5.0F, -22.0F, 0.0F);
+		up.addChild(right_hand);
+		right_hand.texOffs(40, 16).addBox(-2.0F, -2.0F, -2.0F, 3.0F, 12.0F, 4.0F, 0.0F, false);
+
+		right_sleeve = new ModelRenderer(this);
+		right_sleeve.setPos(5.0F, 22.0F, 0.0F);
+		right_hand.addChild(right_sleeve);
+		right_sleeve.texOffs(40, 32).addBox(-7.0F, -24.0F, -2.0F, 3.0F, 12.0F, 4.0F, 0.25F, false);
+
+		left_hand = new ModelRenderer(this);
+		left_hand.setPos(5.0F, -22.0F, 0.0F);
+		up.addChild(left_hand);
+		left_hand.texOffs(32, 48).addBox(-1.0F, -2.0F, -2.0F, 3.0F, 12.0F, 4.0F, 0.0F, false);
+
+		left_sleeve = new ModelRenderer(this);
+		left_sleeve.setPos(-5.0F, 22.0F, 0.0F);
+		left_hand.addChild(left_sleeve);
+		left_sleeve.texOffs(46, 48).addBox(4.0F, -24.0F, -2.0F, 3.0F, 12.0F, 4.0F, 0.25F, false);
 	}
 
 	@Override

@@ -25,7 +25,7 @@ public final class CustomZombies extends ZombieType {
 	public static final ZombieType LAVA_ZOMBIE = new CustomZombies("lava_zombie", new ZombieFeatures()
 		    .rank(RankTypes.PURPLE).xp(36)
 			.entityType(() -> EntityRegister.LAVA_ZOMBIE.get())
-			.zombieModel(() -> LavaZombieModel::new).scale(0.5F)
+			.zombieModel(() -> LavaZombieModel::new)
 			.loot(PVZLoot.LAVA_ZOMBIE)
 			.eatCommonSkill(Arrays.asList())
 	);
@@ -67,7 +67,7 @@ public final class CustomZombies extends ZombieType {
 			.entityType(() -> EntityRegister.GIGA_TOMB_STONE.get())
 			.scale(0.5F)
 	);
-	
+
 	public static void register() {
 		registerZombies(LIST);
 	}

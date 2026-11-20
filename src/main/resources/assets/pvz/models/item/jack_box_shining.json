@@ -1,0 +1,7 @@
+{
+	"parent": "pvz:item/jack_box",
+	"textures": {
+		"1": "pvz:item/jack_box_shining",
+		"particle": "pvz:item/jack_box_shining"
+	}
+}

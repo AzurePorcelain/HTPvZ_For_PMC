@@ -1,5 +1,6 @@
-package com.hungteen.pvz.client.render.layer;
+package com.hungteen.pvz.client.render.layer.item;
 
+import com.hungteen.pvz.client.model.attached.DuckLifebuoyModel;
 import com.hungteen.pvz.client.model.entity.zombie.pool.DuckyTubeModel;
 import com.hungteen.pvz.utils.StringUtil;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -32,7 +33,7 @@ public class DuckyTubeLayer<T extends MobEntity> extends LayerRenderer<T, Entity
 		}
 		matrixStackIn.pushPose();
 		IVertexBuilder builder = bufferIn.getBuffer(RenderType.entitySolid(TEXTURE));
-		matrixStackIn.translate(0, -1.3f, 0);
+		matrixStackIn.translate(0, -0.65f, 0);
 		this.model.render(matrixStackIn, builder, packedLightIn, OverlayTexture.NO_OVERLAY);
 		matrixStackIn.popPose();
 	}

@@ -41,6 +41,7 @@ public class ZombieDropBodyEntity extends PVZEntityBase implements IBodyEntity {
 	public static final int MAX_EXIST_TICK = 60;
 	private static final int HAS_HAND_DEFENCE = 0;
 	private static final int MINI_BODY = 1;
+	private static final int HELMET_STAGE = 2;
 	public final int HEAD_ROT;
 	private int max_exist_tick;
 	private float friction = 0.3F;
@@ -94,6 +95,12 @@ public class ZombieDropBodyEntity extends PVZEntityBase implements IBodyEntity {
 		case BODY:{
 			this.setPos(zombie.position().x, zombie.position().y, zombie.position().z);
 			this.setDeltaMovement(zombie.getDeltaMovement());
+			break;
+		}
+		case DEFENCE:{
+			this.setPos(zombie.position().x, zombie.position().y + zombie.getEyeHeight(), zombie.position().z);
+			final double speed = 0.2D;
+			this.setDeltaMovement((this.random.nextDouble() - 0.5D) * speed, this.random.nextDouble() * speed, (this.random.nextDouble() - 0.5D) * speed);
 			break;
 		}
 		default:
@@ -244,6 +251,15 @@ public class ZombieDropBodyEntity extends PVZEntityBase implements IBodyEntity {
 	@Override
 	public boolean isMini() {
 		return AlgorithmUtil.BitOperator.hasBitOne(this.getBodyState(), MINI_BODY);
+	}
+
+	public void setHelmetStage(int stage) {
+		final int state = this.getBodyState() & ~ (0b11 << HELMET_STAGE);
+		this.setBodyState(state | ((stage & 0b11) << HELMET_STAGE));
+	}
+
+	public int getHelmetStage() {
+		return (this.getBodyState() >> HELMET_STAGE) & 0b11;
 	}
 
 }

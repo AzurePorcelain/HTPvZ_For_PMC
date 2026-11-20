@@ -1,11 +1,15 @@
 package com.hungteen.pvz.common.entity.zombie.grass;
 
-import com.hungteen.pvz.client.model.entity.zombie.grass.BucketHeadZombieModel;
+import com.hungteen.pvz.api.enums.BodyType;
+import com.hungteen.pvz.common.entity.EntityRegister;
+import com.hungteen.pvz.common.entity.zombie.body.ZombieDropBodyEntity;
 import com.hungteen.pvz.common.impl.zombie.GrassZombies;
 import com.hungteen.pvz.common.impl.zombie.ZombieType;
 import com.hungteen.pvz.common.misc.sound.SoundRegister;
 import com.hungteen.pvz.remove.MetalTypes;
 import com.hungteen.pvz.utils.interfaces.IHasMetal;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.DamageSource;
@@ -43,11 +47,7 @@ public class BucketHeadZombieEntity extends NormalZombieEntity implements IHasMe
 	public void increaseMetal() {
 		this.setInnerDefenceLife(this.getInnerLife());
 	}
-	
-	/**
-	 * check the visibility of buckethead model.
-	 * {@link BucketHeadZombieModel#updateFreeParts(BucketHeadZombieEntity)}
-	 */
+
 	public boolean hasBucketHead(int stage) {
 		final double percent = this.getInnerDefenceLife() / this.getInnerLife();
 		if(stage == 3) {

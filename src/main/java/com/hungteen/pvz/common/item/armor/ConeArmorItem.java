@@ -1,8 +1,10 @@
 package com.hungteen.pvz.common.item.armor;
 
 import com.hungteen.pvz.client.model.armor.ConeHeadModel;
+import com.hungteen.pvz.common.item.ItemRegister;
 import com.hungteen.pvz.utils.StringUtil;
 import net.minecraft.client.renderer.entity.model.BipedModel;
+import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -39,5 +41,7 @@ public class ConeArmorItem extends PVZArmorItem {
     @OnlyIn(Dist.CLIENT)
     public static void initArmorModel() {
         modelMap.put(EquipmentSlotType.HEAD, new ConeHeadModel(1f));
+        ItemModelsProperties.register(ItemRegister.CONE_HEAD.get(), StringUtil.prefix("durability"),
+                (stack, world, entity) -> stack.getMaxDamage() > 0 ? (float) stack.getDamageValue() * 3 / stack.getMaxDamage() : 0.0F);
     }
 }

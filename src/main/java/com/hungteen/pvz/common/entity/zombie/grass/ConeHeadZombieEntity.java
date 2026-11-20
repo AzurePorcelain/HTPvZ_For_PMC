@@ -1,6 +1,8 @@
 package com.hungteen.pvz.common.entity.zombie.grass;
 
-import com.hungteen.pvz.client.model.entity.zombie.grass.ConeHeadZombieModel;
+import com.hungteen.pvz.api.enums.BodyType;
+import com.hungteen.pvz.common.entity.EntityRegister;
+import com.hungteen.pvz.common.entity.zombie.body.ZombieDropBodyEntity;
 import com.hungteen.pvz.common.impl.zombie.GrassZombies;
 import com.hungteen.pvz.common.impl.zombie.ZombieType;
 import com.hungteen.pvz.common.misc.sound.SoundRegister;
@@ -25,11 +27,7 @@ public class ConeHeadZombieEntity extends NormalZombieEntity{
 	public float getInnerLife() {
 		return 40;
 	}
-	
-	/**
-	 * check the visibility of conehead model.
-	 * {@link ConeHeadZombieModel#updateFreeParts(ConeHeadZombieEntity)} 
-	 */
+
 	public boolean hasConeHead(int stage) {
 		final double percent = this.getInnerDefenceLife() / this.getInnerLife();
 		if(stage == 3) {

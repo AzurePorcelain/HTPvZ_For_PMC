@@ -1,8 +1,8 @@
 package com.hungteen.pvz.client.render.entity.zombie.grass;
 
 import com.hungteen.pvz.client.render.entity.zombie.PVZZombieRender;
-import com.hungteen.pvz.client.render.layer.DuckyTubeLayer;
 import com.hungteen.pvz.client.render.layer.ZombieBeardLayer;
+import com.hungteen.pvz.client.render.layer.item.DuckyTubeLayer;
 import com.hungteen.pvz.common.entity.zombie.grass.NormalZombieEntity;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;

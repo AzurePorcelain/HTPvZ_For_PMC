@@ -21,7 +21,7 @@ public final class OtherZombies extends ZombieType {
 	public static final ZombieType RA_ZOMBIE = new OtherZombies("ra_zombie", new ZombieFeatures()
 		    .rank(RankTypes.GREEN).xp(10)
 			.entityType(() -> EntityRegister.RA_ZOMBIE.get())
-			.zombieModel(() -> RaZombieModel::new).scale(0.5F)
+			.zombieModel(() -> RaZombieModel::new).scale(1.0F)
 			.loot(PVZLoot.RA_ZOMBIE)
 			.eatCommonSkill(Arrays.asList())
 	);

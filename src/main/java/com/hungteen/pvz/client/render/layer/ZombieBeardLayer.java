@@ -21,8 +21,7 @@ public class ZombieBeardLayer<T extends LivingEntity, M extends EntityModel<T>> 
 
 	@Override
 	protected boolean canRender(T entity) {
-		if(entity.isInvisible()) return false;
-		if(entity instanceof PVZZombieEntity) {
+		if(!entity.isInvisible() && entity instanceof PVZZombieEntity) {
 			return ((PVZZombieEntity) entity).getVariantType() == VariantType.BEARD;
 		}
 		return false;

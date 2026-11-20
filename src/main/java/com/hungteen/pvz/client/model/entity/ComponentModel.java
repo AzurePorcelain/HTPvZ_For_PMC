@@ -12,7 +12,6 @@ import net.minecraft.entity.Entity;
  **/
 public abstract class ComponentModel<T extends Entity> extends PVZEntityModel<T>{
 
-
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
     }

@@ -35,7 +35,7 @@ import java.util.Optional;
 public abstract class PlantShooterEntity extends PVZPlantEntity implements IShooter {
 
 	//use for normal shoot attack animation and shoot goal.
-	private static final DataParameter<Integer> SHOOT_TICK = EntityDataManager.defineId(PVZPlantEntity.class, DataSerializers.INT);
+	private static final DataParameter<Integer> SHOOT_TICK = EntityDataManager.defineId(PlantShooterEntity.class, DataSerializers.INT);
 	public static final float FORWARD_SHOOT_ANGLE = 0;
 	public static final float BACK_SHOOT_ANGLE = 180;
 	public static final float FORWARD_LEFT_SHOOT_ANGLE = -7.5F;

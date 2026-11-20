@@ -13,67 +13,84 @@ import net.minecraft.util.math.MathHelper;
 
 public class DancingZombieModel extends PVZZombieModel<DancingZombieEntity> {
 	private final ModelRenderer total;
-	private final ModelRenderer right_leg;
-	private final ModelRenderer left_leg;
 	private final ModelRenderer up;
+	private final ModelRenderer head;
+	private final ModelRenderer cube_r1;
+	private final ModelRenderer cube_r2;
+	private final ModelRenderer body;
+	private final ModelRenderer Body_r1;
 	private final ModelRenderer left_hand;
 	private final ModelRenderer right_hand;
-	private final ModelRenderer head;
-	private final ModelRenderer body;
+	private final ModelRenderer left_leg;
+	private final ModelRenderer right_leg;
 
 	public DancingZombieModel() {
-		texWidth = 256;
-		texHeight = 256;
+		texWidth = 64;
+		texHeight = 64;
 
 		total = new ModelRenderer(this);
-		total.setPos(0.0F, 24.0F, 0.0F);
-		
+		total.setPos(0.0F, 17.0F, -6.0F);
 
-		right_leg = new ModelRenderer(this);
-		right_leg.setPos(5.0F, -30.0F, 0.0F);
-		total.addChild(right_leg);
-		right_leg.texOffs(218, 239).addBox(-4.0F, 24.0F, -6.0F, 8.0F, 6.0F, 11.0F, 0.0F, false);
-		right_leg.texOffs(0, 226).addBox(-3.0F, 0.0F, -2.0F, 6.0F, 24.0F, 6.0F, 0.0F, false);
-
-		left_leg = new ModelRenderer(this);
-		left_leg.setPos(-5.0F, -30.0F, 0.0F);
-		total.addChild(left_leg);
-		left_leg.texOffs(36, 239).addBox(-4.0F, 24.0F, -6.0F, 8.0F, 6.0F, 11.0F, 0.0F, false);
-		left_leg.texOffs(96, 226).addBox(-3.0F, 0.0F, -2.0F, 6.0F, 24.0F, 6.0F, 0.0F, false);
 
 		up = new ModelRenderer(this);
-		up.setPos(0.0F, -30.0F, 0.0F);
+		up.setPos(0.0F, -5.0F, 8.0F);
 		total.addChild(up);
-		
 
-		left_hand = new ModelRenderer(this);
-		left_hand.setPos(11.0F, -21.0F, 1.0F);
-		up.addChild(left_hand);
-		left_hand.texOffs(60, 188).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 24.0F, 6.0F, 0.0F, false);
-
-		right_hand = new ModelRenderer(this);
-		right_hand.setPos(-11.0F, -22.0F, 0.0F);
-		up.addChild(right_hand);
-		right_hand.texOffs(6, 179).addBox(-3.0F, -2.0F, -2.0F, 6.0F, 24.0F, 6.0F, 0.0F, false);
 
 		head = new ModelRenderer(this);
-		head.setPos(0.0F, -24.0F, 0.0F);
+		head.setPos(0.0F, -12.0F, 0.0F);
 		up.addChild(head);
-		head.texOffs(0, 0).addBox(-6.0F, -12.0F, -5.0F, 12.0F, 12.0F, 12.0F, 0.0F, false);
-		head.texOffs(200, 204).addBox(-7.0F, -18.0F, -5.0F, 14.0F, 6.0F, 14.0F, 0.0F, false);
-		head.texOffs(232, 177).addBox(-8.0F, -12.0F, -1.0F, 2.0F, 5.0F, 10.0F, 0.0F, false);
-		head.texOffs(132, 204).addBox(6.0F, -12.0F, -1.0F, 2.0F, 5.0F, 10.0F, 0.0F, false);
-		head.texOffs(162, 212).addBox(-6.0F, -12.0F, 7.0F, 12.0F, 5.0F, 2.0F, 0.0F, false);
-		head.texOffs(70, 228).addBox(-7.0F, -9.0F, -7.0F, 1.0F, 1.0F, 6.0F, 0.0F, false);
-		head.texOffs(31, 228).addBox(6.0F, -9.0F, -7.0F, 1.0F, 1.0F, 6.0F, 0.0F, false);
-		head.texOffs(110, 216).addBox(-1.0F, -9.0F, -7.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-		head.texOffs(198, 197).addBox(-6.0F, -11.0F, -7.0F, 5.0F, 5.0F, 1.0F, 0.0F, false);
-		head.texOffs(205, 176).addBox(1.0F, -11.0F, -7.0F, 5.0F, 5.0F, 1.0F, 0.0F, false);
+		head.texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
+		head.texOffs(24, 16).addBox(-4.0F, -7.75F, -4.1F, 8.0F, 8.0F, 0.0F, 0.0F, false);
+		head.texOffs(23, 25).addBox(-4.5F, -10.25F, -4.05F, 9.0F, 8.0F, 10.0F, 0.0F, false);
+		head.texOffs(24, 43).addBox(-4.5F, -10.0F, -3.55F, 9.0F, 8.0F, 9.0F, 0.0F, false);
+
+		cube_r1 = new ModelRenderer(this);
+		cube_r1.setPos(4.75F, -10.25F, 1.0F);
+		head.addChild(cube_r1);
+		setRotationAngle(cube_r1, 0.0F, 0.0F, -0.0175F);
+		cube_r1.texOffs(0, 34).addBox(-0.1396F, -0.0012F, -5.05F, 0.0F, 8.0F, 10.0F, 0.0F, false);
+
+		cube_r2 = new ModelRenderer(this);
+		cube_r2.setPos(-4.75F, -2.25F, 1.0F);
+		head.addChild(cube_r2);
+		setRotationAngle(cube_r2, 0.0F, 0.0F, 0.0175F);
+		cube_r2.texOffs(0, 34).addBox(0.0F, -8.0F, -5.05F, 0.0F, 8.0F, 10.0F, 0.0F, false);
 
 		body = new ModelRenderer(this);
-		body.setPos(0.0F, 0.0F, 0.0F);
+		body.setPos(0.0F, -12.0F, 0.0F);
 		up.addChild(body);
-		body.texOffs(141, 224).addBox(-8.0F, -24.0F, -3.0F, 16.0F, 24.0F, 8.0F, 0.0F, false);
+		body.texOffs(0, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, false);
+
+		Body_r1 = new ModelRenderer(this);
+		Body_r1.setPos(0.0F, 24.0F, -1.0F);
+		body.addChild(Body_r1);
+		setRotationAngle(Body_r1, -0.0175F, 0.0F, 0.0F);
+		Body_r1.texOffs(4, 32).addBox(-4.0F, -24.0F, -1.65F, 8.0F, 12.0F, 0.0F, 0.0F, false);
+
+		left_hand = new ModelRenderer(this);
+		left_hand.setPos(-5.0F, -10.0F, 0.0F);
+		up.addChild(left_hand);
+		left_hand.texOffs(32, 0).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		left_hand.texOffs(40, 18).addBox(-3.5F, 7.0F, -2.5F, 5.0F, 1.0F, 5.0F, 0.0F, false);
+
+		right_hand = new ModelRenderer(this);
+		right_hand.setPos(5.0F, -10.0F, 0.0F);
+		up.addChild(right_hand);
+		right_hand.texOffs(32, 0).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		right_hand.texOffs(40, 18).addBox(-1.5F, 7.0F, -2.5F, 5.0F, 1.0F, 5.0F, 0.0F, false);
+
+		left_leg = new ModelRenderer(this);
+		left_leg.setPos(-1.9F, -5.0F, 8.0F);
+		total.addChild(left_leg);
+		left_leg.texOffs(48, 0).addBox(-2.1F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		left_leg.texOffs(0, 57).addBox(-2.6F, 10.25F, -2.75F, 5.0F, 2.0F, 5.0F, 0.0F, false);
+
+		right_leg = new ModelRenderer(this);
+		right_leg.setPos(1.9F, -5.0F, 8.0F);
+		total.addChild(right_leg);
+		right_leg.texOffs(48, 0).addBox(-1.9F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+		right_leg.texOffs(0, 57).addBox(-2.4F, 10.25F, -2.75F, 5.0F, 2.0F, 5.0F, 0.0F, false);
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package com.hungteen.pvz.client.render.entity.zombie.pool;
 
 import com.hungteen.pvz.client.model.entity.zombie.pool.DiggerZombieModel;
 import com.hungteen.pvz.client.render.entity.zombie.PVZZombieRender;
+import com.hungteen.pvz.client.render.layer.item.PickaxeItemLayer;
 import com.hungteen.pvz.common.entity.zombie.pool.DiggerZombieEntity;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -14,6 +15,7 @@ public class DiggerZombieRender extends PVZZombieRender<DiggerZombieEntity>{
 
 	public DiggerZombieRender(EntityRendererManager rendererManager) {
 		super(rendererManager, new DiggerZombieModel(), 0.3f);
+		this.addLayer(new PickaxeItemLayer<>(this));
 	}
 
 	@Override

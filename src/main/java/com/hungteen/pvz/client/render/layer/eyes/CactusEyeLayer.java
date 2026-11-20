@@ -12,7 +12,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class CactusEyeLayer<T extends LivingEntity, M extends EntityModel<T>> extends PVZEyeLayer<T,M> {
 
-
     public CactusEyeLayer(IEntityRenderer<T, M> entityRendererIn) {
         super(entityRendererIn);
     }

@@ -1,0 +1,7 @@
+{
+	"parent": "pvz:item/screen_door",
+	"textures": {
+		"1": "pvz:item/screen_door_2",
+		"particle": "pvz:item/screen_door_2"
+	}
+}

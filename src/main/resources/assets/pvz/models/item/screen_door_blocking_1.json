@@ -1,0 +1,7 @@
+{
+	"parent": "pvz:item/screen_door_blocking",
+	"textures": {
+		"1": "pvz:item/screen_door_1",
+		"particle": "pvz:item/screen_door_1"
+	}
+}

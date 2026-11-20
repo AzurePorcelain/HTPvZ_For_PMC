@@ -1,35 +1,38 @@
 {
+	"format_version": "26.3",
 	"credit": "Made with Blockbench",
-	"texture_size": [32, 32],
+	"texture_size": [64, 64],
 	"textures": {
-		"0": "pvz:item/zombie_flag",
+		"1": "pvz:item/zombie_flag",
 		"particle": "pvz:item/zombie_flag"
 	},
 	"elements": [
 		{
+			"name": "pole",
 			"from": [7, 0, 7],
-			"to": [8, 16, 8],
+			"to": [8, 30, 8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [15, 8, 16]},
 			"faces": {
-				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
-				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
-				"south": {"uv": [0, 0, 1, 1], "texture": "#0"},
-				"west": {"uv": [0, 0, 1, 1], "texture": "#0"},
-				"up": {"uv": [0, 0, 1, 1], "texture": "#0"},
-				"down": {"uv": [0, 0, 1, 1], "texture": "#0"}
+				"north": {"uv": [12.5, 0.5, 13, 11], "texture": "#1"},
+				"east": {"uv": [12, 0.5, 12.5, 11], "texture": "#1"},
+				"south": {"uv": [11.5, 0.5, 12, 11], "texture": "#1"},
+				"west": {"uv": [11, 0.5, 11.5, 11], "texture": "#1"},
+				"up": {"uv": [11.5, 0, 12, 0.5], "texture": "#1"},
+				"down": {"uv": [12, 0, 12.5, 0.5], "texture": "#1"}
 			}
 		},
 		{
-			"from": [7, 16, 7],
-			"to": [8, 30, 27],
+			"name": "cloth",
+			"from": [7.25, 16, 7.99],
+			"to": [7.75, 30, 27],
 			"rotation": {"angle": 0, "axis": "y", "origin": [15, 24, 16]},
 			"faces": {
-				"north": {"uv": [0, 15.5, 16, 16], "texture": "#0"},
-				"east": {"uv": [0, 1.5, 16, 15.5], "texture": "#0"},
-				"south": {"uv": [0, 15.5, 16, 16], "texture": "#0"},
-				"west": {"uv": [0, 1.5, 16, 15.5], "texture": "#0"},
-				"up": {"uv": [0, 15.5, 16, 16], "texture": "#0"},
-				"down": {"uv": [0, 15.5, 16, 16], "texture": "#0"}
+				"north": {"uv": [0, 0.25, 0.25, 3.75], "texture": "#1"},
+				"east": {"uv": [5.5, 0.25, 10.5, 3.75], "texture": "#1"},
+				"south": {"uv": [5.25, 0.25, 5.5, 3.75], "texture": "#1"},
+				"west": {"uv": [0.25, 0.25, 5.25, 3.75], "texture": "#1"},
+				"up": {"uv": [0.25, 0, 5.25, 0.25], "rotation": 90, "texture": "#1"},
+				"down": {"uv": [5.25, 0, 10.25, 0.25], "rotation": 90, "texture": "#1"}
 			}
 		}
 	],
@@ -66,8 +69,10 @@
 	},
 	"groups": [
 		{
-			"name": "group",
+			"name": "flag",
 			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
 			"children": [0, 1]
 		}
 	]

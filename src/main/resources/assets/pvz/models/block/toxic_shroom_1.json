@@ -3,7 +3,7 @@
 	"parent": "minecraft:block/block",
 	"textures": {
 		"0": "pvz:block/toxic_shroom_1",
-		"4": "pvz:vhypha_age1",
+		"4": "pvz:block/hypha_age1",
 		"particle": "pvz:block/toxic_shroom_1"
 	},
 	"elements": [

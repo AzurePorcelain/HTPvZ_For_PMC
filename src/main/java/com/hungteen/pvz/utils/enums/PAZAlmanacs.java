@@ -34,8 +34,7 @@ public enum PAZAlmanacs implements IAlmanacEntry {
     WORK_CD,
     WORK_RANGE,
     AWAKE_TIME,
-    EFFECT_TIME
-    ;
+    EFFECT_TIME;
 
     @Override
     public String getText() {

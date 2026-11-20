@@ -1,4 +1,4 @@
-package com.hungteen.pvz.client.render.layer;
+package com.hungteen.pvz.client.render.layer.item;
 
 import com.hungteen.pvz.PVZMod;
 import com.hungteen.pvz.client.model.entity.misc.LadderModel;

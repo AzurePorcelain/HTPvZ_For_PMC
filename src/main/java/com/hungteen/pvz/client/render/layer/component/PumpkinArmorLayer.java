@@ -1,7 +1,6 @@
-package com.hungteen.pvz.client.render.layer;
+package com.hungteen.pvz.client.render.layer.component;
 
 import com.hungteen.pvz.client.model.entity.plant.defence.PumpkinModel;
-import com.hungteen.pvz.client.render.layer.component.ComponentLayer;
 import com.hungteen.pvz.common.entity.plant.PVZPlantEntity;
 import com.hungteen.pvz.common.entity.plant.defence.PumpkinEntity;
 import com.hungteen.pvz.common.impl.plant.PVZPlants;

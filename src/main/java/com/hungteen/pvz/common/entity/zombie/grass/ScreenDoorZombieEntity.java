@@ -1,5 +1,7 @@
 package com.hungteen.pvz.common.entity.zombie.grass;
 
+import com.hungteen.pvz.api.enums.BodyType;
+import com.hungteen.pvz.common.entity.EntityRegister;
 import com.hungteen.pvz.common.entity.zombie.base.DefenceZombieEntity;
 import com.hungteen.pvz.common.entity.zombie.body.ZombieDropBodyEntity;
 import com.hungteen.pvz.common.entity.zombie.part.PVZHealthPartEntity;
@@ -10,6 +12,7 @@ import com.hungteen.pvz.remove.MetalTypes;
 import com.hungteen.pvz.utils.interfaces.IHasMetal;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -25,7 +28,7 @@ public class ScreenDoorZombieEntity extends DefenceZombieEntity implements IHasM
 		this.part = new PVZHealthPartEntity(this, 1f, 1.7f);
 		this.part.setOwner(this);
 	}
-	
+
 	@Override
 	public boolean hasMetal() {
 		return this.getOuterDefenceLife() > 0;
@@ -41,12 +44,35 @@ public class ScreenDoorZombieEntity extends DefenceZombieEntity implements IHasM
 		this.setOuterDefenceLife(this.getOuterLife());
 		this.resetParts();
 	}
-	
+
 	@Override
 	public boolean canLostHand() {
 		return super.canLostHand() && ! this.hasMetal();
 	}
-	
+
+	@Override
+	public void onOuterDefenceBroken() {
+		super.onOuterDefenceBroken();
+		this.dropDoorBody();
+	}
+
+	@Override
+	protected void onFallBody(DamageSource source) {
+		super.onFallBody(source);
+		if(this.hasMetal()) {
+			this.dropDoorBody();
+		}
+	}
+
+	/**
+	 * spawn an independent screen door body part.
+	 */
+	private void dropDoorBody() {
+		ZombieDropBodyEntity body = EntityRegister.ZOMBIE_DROP_BODY.get().create(level);
+		body.droppedByOwner(this, null, BodyType.DEFENCE);
+		level.addFreshEntity(body);
+	}
+
 	@Override
 	protected void setBodyStates(ZombieDropBodyEntity body) {
 		super.setBodyStates(body);

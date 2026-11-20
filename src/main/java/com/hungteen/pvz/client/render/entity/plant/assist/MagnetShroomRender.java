@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 import com.hungteen.pvz.client.model.entity.plant.assist.MagnetShroomModel;
 import com.hungteen.pvz.client.render.entity.plant.PVZPlantRender;
-import com.hungteen.pvz.client.render.layer.MetalItemLayer;
+import com.hungteen.pvz.client.render.layer.item.MetalItemLayer;
 import com.hungteen.pvz.common.entity.plant.assist.MagnetShroomEntity;
 
 import net.minecraft.client.renderer.RenderType;
@@ -26,8 +26,9 @@ public class MagnetShroomRender extends PVZPlantRender<MagnetShroomEntity> {
 		this.addLayer(new MetalItemLayer<>(this));
 	}
 	
+	@Override
 	@Nullable
-	protected RenderType func_230042_a_(MagnetShroomEntity entity, boolean p_230042_2_, boolean p_230042_3_) {
+	protected RenderType getRenderType(MagnetShroomEntity entity, boolean p_230496_2_, boolean p_230496_3_, boolean p_230496_4_) {
 		ResourceLocation resourcelocation = this.getTextureLocation(entity);
 		return RenderType.entityTranslucentCull(resourcelocation);
 	}
