@@ -38,12 +38,8 @@ public class PlantLadderLayer<T extends PVZPlantEntity> extends LayerRenderer<T,
 		matrixStackIn.pushPose();
 		IVertexBuilder builder = bufferIn.getBuffer(RenderType.entitySolid(LADDER_TEX));
 		if(this.plantRender != null) {
-			float scale = 0.6f;
-			float plantScale = this.plantRender.getScaleByEntity(plant);
-		    matrixStackIn.scale(scale / plantScale, scale / plantScale, scale / plantScale);
-		    double offsetH = 1.501D;
 		    matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(- 22.5F));
-		    matrixStackIn.translate(0, plantScale / scale * offsetH - offsetH + 0.5, - 0.8F);
+		    matrixStackIn.translate(0, 0.25, - 0.25F);
 		} else {
 			PVZMod.LOGGER.debug("ladder render wrong !");
 		}
